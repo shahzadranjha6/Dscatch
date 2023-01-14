@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 23000011097900018}
   - component: {fileID: 114000012194588374}
   - component: {fileID: 2507658670725896457}
-  - component: {fileID: 6031633914035224538}
+  - component: {fileID: 4706982963804663101}
+  - component: {fileID: -3112720901503582388}
   m_Layer: 0
   m_Name: Hexgon
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +137,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.673261, y: 1.4742059}
   m_EdgeRadius: 0
---- !u!50 &6031633914035224538
+--- !u!114 &4706982963804663101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013356204050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96540cd165c0b6a44aee296760914fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &-3112720901503582388
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -150,7 +163,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.01
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0

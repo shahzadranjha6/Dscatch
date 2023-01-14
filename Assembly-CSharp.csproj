@@ -56,10 +56,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\catchermovent.cs" />
     <Compile Include="Assets\GameAssets\Free Pixel Art Hills\Demo\MoveBackground.cs" />
     <Compile Include="Assets\GameAssets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
-    <Compile Include="Assets\Scripts\catchermovent.cs" />
     <Compile Include="Assets\Scripts\spawner.cs" />
+    <Compile Include="Assets\Scripts\Destoryoutofbound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GameAssets\AurynSky\Gems Ultimate Pack\READ ME.txt" />

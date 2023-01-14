@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 23000012220716874}
   - component: {fileID: 114000012797500034}
   - component: {fileID: -8599187034020427626}
-  - component: {fileID: 3727979671552630056}
+  - component: {fileID: 6500664694729146286}
+  - component: {fileID: 9096454420770416564}
   m_Layer: 0
   m_Name: 5 Side Diamond
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +137,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3966622, y: 2.2793622}
   m_EdgeRadius: 0
---- !u!50 &3727979671552630056
+--- !u!114 &6500664694729146286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010880751780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96540cd165c0b6a44aee296760914fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &9096454420770416564
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -150,7 +163,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.01
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0

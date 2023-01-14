@@ -30,4 +30,12 @@ public class catchermovent : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Collectable"))
+        {
+            Destroy(other);
+            Debug.Log("collected");
+        }
+    }
 }

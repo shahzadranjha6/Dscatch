@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 114000012119898328}
   - component: {fileID: 114000013408908766}
   - component: {fileID: 615867092516515395}
-  - component: {fileID: 969159353165414887}
+  - component: {fileID: 4693038064990983727}
+  - component: {fileID: 1749720768286513650}
   m_Layer: 0
   m_Name: Heart
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +162,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1679075, y: 0.44791496}
   m_EdgeRadius: 0
---- !u!50 &969159353165414887
+--- !u!114 &4693038064990983727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010714891294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96540cd165c0b6a44aee296760914fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1749720768286513650
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -175,7 +188,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.01
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
