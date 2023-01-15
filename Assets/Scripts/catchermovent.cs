@@ -8,8 +8,11 @@ public class catchermovent : MonoBehaviour
     private int Bound = 10;
     float horizotal;
     int speed = 15;
+    AudioSource audioSource;
+    public AudioClip point;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -30,11 +33,12 @@ public class catchermovent : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Collectable"))
+    private void OnTriggerEnter2D(Collider2D collision)
+{
+        if (collision.CompareTag("Collectable"))
         {
-            Destroy(other);
+            Destroy(collision.gameObject);
+            audioSource.PlayOneShot(point);
             Debug.Log("collected");
         }
     }

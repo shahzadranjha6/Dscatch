@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 747794529}
   - component: {fileID: 747794531}
   - component: {fileID: 747794532}
+  - component: {fileID: 747794533}
   m_Layer: 0
   m_Name: PlayerCatcher
   m_TagString: Untagged
@@ -266,7 +267,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa66052f83936f46b0a6213c5294965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  point: {fileID: 8300000, guid: cba8a126282ffd24ba296c4517cdf7b3, type: 3}
 --- !u!61 &747794532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -331,6 +333,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!82 &747794533
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747794528}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1325793465
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,3 +573,14 @@ MonoBehaviour:
   - {fileID: 1000010986879176, guid: 8f226a393243a0141bace5fd6b60bafa, type: 3}
   - {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
   - {fileID: 1000012946874890, guid: 586acbe765df7c34385298970076297e, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: 5c623d53aca45c44586ec2d14fef488e, type: 2}
+  - {fileID: 2100000, guid: 932bfbb102946e04796ee9ade9385119, type: 2}
+  - {fileID: 2100000, guid: d3fdd53a2b5dd904fad8d824266a4cad, type: 2}
+  - {fileID: 2100000, guid: efe6fc25350958c479cd9fcde7e565f9, type: 2}
+  - {fileID: 2100000, guid: a5ab27f24d140594197755b8c9ee7179, type: 2}
+  - {fileID: 2100000, guid: 5a9e6cf91cbfc1a4fbc9470cca37b97a, type: 2}
+  - {fileID: 2100000, guid: 34a2d4fc8f422c345a4cc739f3ee3b81, type: 2}
+  - {fileID: 2100000, guid: 152a75409221b6244be7b0063172b666, type: 2}
+  - {fileID: 2100000, guid: 6a6944f4904547e4fb039789da5fcd85, type: 2}
+  - {fileID: 2100000, guid: 640dc2f025ee433489ca50d9f685de47, type: 2}
