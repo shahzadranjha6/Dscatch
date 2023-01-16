@@ -26,7 +26,7 @@ public class spawner : MonoBehaviour
         Vector2 spawnpos = new Vector2(Random.Range(-Bound, Bound), transform.position.y);
         int RandomIndex = Random.Range(0, Diamonds.Length);
         int Randommat = Random.Range(0, Materials.Length);
-        Diamonds[RandomIndex].gameObject.GetComponent<MeshRenderer>().sharedMaterial = Materials[Randommat];
+        // Diamonds[RandomIndex].gameObject.GetComponent<MeshRenderer>().sharedMaterial = Materials[Randommat];
         Instantiate(Diamonds[RandomIndex], spawnpos, Diamonds[RandomIndex].transform.rotation);
     }
 }

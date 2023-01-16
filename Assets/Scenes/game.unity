@@ -558,29 +558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Diamonds:
-  - {fileID: 1000011841440206, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
-  - {fileID: 1000010880751780, guid: c3c0707254334a64ca8198f7486e977d, type: 3}
-  - {fileID: 1000012510692222, guid: f5c872ee906a85b46aa65e0ab683ed9f, type: 3}
-  - {fileID: 1000013765287000, guid: 38dea0631a962ad45b71e2759e4240d8, type: 3}
-  - {fileID: 1000011501826600, guid: b34bf25cecb5fc24c91de3edea19cb13, type: 3}
-  - {fileID: 1000013105924406, guid: 6a7274aefcc6cef4fbbfba924cc7f657, type: 3}
-  - {fileID: 1000013931470818, guid: 5c02591794acece409986647ed6329a7, type: 3}
-  - {fileID: 1000013656696560, guid: cd34118c604e29141afea74caecd70f2, type: 3}
-  - {fileID: 1000010694622314, guid: c4bf8b30fce268044a786a8600922324, type: 3}
-  - {fileID: 1000010714891294, guid: 5a0537415d4017c4fad7a4986f502dc1, type: 3}
-  - {fileID: 1000013356204050, guid: 676e107eeafc5524b97910d76516565d, type: 3}
-  - {fileID: 1000010646675420, guid: 1a73058088a4b204bb3a13aff5c48489, type: 3}
-  - {fileID: 1000010986879176, guid: 8f226a393243a0141bace5fd6b60bafa, type: 3}
-  - {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
-  - {fileID: 1000012946874890, guid: 586acbe765df7c34385298970076297e, type: 3}
-  Materials:
-  - {fileID: 2100000, guid: 5c623d53aca45c44586ec2d14fef488e, type: 2}
-  - {fileID: 2100000, guid: 932bfbb102946e04796ee9ade9385119, type: 2}
-  - {fileID: 2100000, guid: d3fdd53a2b5dd904fad8d824266a4cad, type: 2}
-  - {fileID: 2100000, guid: efe6fc25350958c479cd9fcde7e565f9, type: 2}
-  - {fileID: 2100000, guid: a5ab27f24d140594197755b8c9ee7179, type: 2}
-  - {fileID: 2100000, guid: 5a9e6cf91cbfc1a4fbc9470cca37b97a, type: 2}
-  - {fileID: 2100000, guid: 34a2d4fc8f422c345a4cc739f3ee3b81, type: 2}
-  - {fileID: 2100000, guid: 152a75409221b6244be7b0063172b666, type: 2}
-  - {fileID: 2100000, guid: 6a6944f4904547e4fb039789da5fcd85, type: 2}
-  - {fileID: 2100000, guid: 640dc2f025ee433489ca50d9f685de47, type: 2}
+  - {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
+  - {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
+  Materials: []
