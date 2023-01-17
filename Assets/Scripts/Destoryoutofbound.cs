@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destoryoutofbound : MonoBehaviour
 {
-    int speed = 10;
+    
     // Start is called before the first frame update
     void Start()
     {
