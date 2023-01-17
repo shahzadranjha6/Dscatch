@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 
 public class catchermovent : MonoBehaviour
 {
@@ -9,18 +9,8 @@ public class catchermovent : MonoBehaviour
     private int Bound = 10;
     float horizotal;
     int speed = 15;
-    AudioSource audioSource;
-    public AudioClip point;
-    public TextMeshProUGUI Score;
-    int ScoreCount;
-
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        ScoreCount = 0;
-        Score.text = "Score:" + ScoreCount;
-
-    }
+    
+    
 
     // Update is called once per frame
     void Update()
@@ -43,10 +33,10 @@ public class catchermovent : MonoBehaviour
 {
         if (collision.CompareTag("Collectable"))
         {
-            ScoreCount++;
-            Score.text = "Score:" + ScoreCount;
+            
             Destroy(collision.gameObject);
-            audioSource.PlayOneShot(point);
+            AudioManager.instance.PlaySound();
+            UIManager.instance.ScoreUpdate();
             Debug.Log("collected");
         }
     }
