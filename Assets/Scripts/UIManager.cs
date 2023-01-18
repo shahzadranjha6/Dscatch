@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = FindObjectOfType<UIManager>();
         ScoreCount = 0;
         Score.text = "Score:" + ScoreCount;
     }

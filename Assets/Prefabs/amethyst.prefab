@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4048796630317613114}
   - component: {fileID: 3791954926419387003}
   - component: {fileID: 4204019828292941379}
-  - component: {fileID: -8670342017182835386}
   m_Layer: 0
   m_Name: amethyst
   m_TagString: Collectable
@@ -73,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 130789549
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 63194139a775c1a4c9c2069400426134, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,15 +133,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &-8670342017182835386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048796630317613117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96540cd165c0b6a44aee296760914fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

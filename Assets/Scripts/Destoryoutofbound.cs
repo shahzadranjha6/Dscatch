@@ -5,13 +5,12 @@ using UnityEngine;
 public class Destoryoutofbound : MonoBehaviour
 {
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        //transform.Translate(Vector2.down * speed * Time.deltaTime);
-        if (transform.position.y<=-6)
+        if (collision.CompareTag("Collectable"))
         {
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            Debug.Log("DESTORY");
         }
     }
 }

@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        instance = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
