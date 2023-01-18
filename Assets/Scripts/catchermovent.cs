@@ -11,8 +11,6 @@ public class catchermovent : MonoBehaviour
     int speed = 15;
     
     
-
-    // Update is called once per frame
     void Update()
     {
         #region movement depricated by azeem.   (Shahzad)
@@ -29,6 +27,7 @@ public class catchermovent : MonoBehaviour
 
         }
         #endregion
+        //ended region
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
