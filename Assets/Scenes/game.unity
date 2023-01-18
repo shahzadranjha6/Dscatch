@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 54963024}
   - component: {fileID: 54963023}
   m_Layer: 0
-  m_Name: Destoryer
+  m_Name: GroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6638d314a3a5a74d89bca42e1b03748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 567347988}
+  ScoreTxt: {fileID: 567347988}
 --- !u!1 &747794528
 GameObject:
   m_ObjectHideFlags: 0

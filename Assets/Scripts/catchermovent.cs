@@ -15,6 +15,7 @@ public class catchermovent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region movement depricated by azeem.   (Shahzad)
         horizotal = Input.GetAxis("Horizontal");
         transform.Translate(horizotal * Vector2.right* speed * Time.deltaTime);
         if (transform.position.x >= Bound)
@@ -27,17 +28,17 @@ public class catchermovent : MonoBehaviour
             transform.position = new Vector2(-Bound, transform.position.y);
 
         }
-
+        #endregion
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
-{
+    {
         if (collision.CompareTag("Collectable"))
-        {
-            
-            Destroy(collision.gameObject);
-            AudioManager.instance.PlaySound();
-            UIManager.instance.ScoreUpdate();
-            Debug.Log("collected");
-        }
+            {
+                Destroy(collision.gameObject);
+                AudioManager.instance.PlaySound();
+                UIManager.instance.ScoreUpdate();
+                Debug.Log("collected");
+            }
     }
 }

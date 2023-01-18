@@ -9,7 +9,7 @@ public class Destoryoutofbound : MonoBehaviour
     {
         if (collision.CompareTag("Collectable"))
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject , 2);
             Debug.Log("DESTORY");
         }
     }

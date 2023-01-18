@@ -5,24 +5,34 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI Score;
-    int ScoreCount;
     public static UIManager instance;
+
+
+
+    // ---GUI texts, panels, buttons, etc   
+    public TextMeshProUGUI ScoreTxt;
+
+
+
+    // ---Others
+    int ScoreCount;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        instance = FindObjectOfType<UIManager>();
+        if(instance == null)
+            {
+                instance = this;
+            }
+
         ScoreCount = 0;
-        Score.text = "Score:" + ScoreCount;
+        ScoreTxt.text = "Score:" + ScoreCount;
     }
 
-    // Update is called once per frame
-  
+
    public  void ScoreUpdate()
     {
-        ScoreCount++;
-        Score.text = "Score:" + ScoreCount;
+        ScoreTxt.text = "Score:" + ++ScoreCount;
     }
 }
