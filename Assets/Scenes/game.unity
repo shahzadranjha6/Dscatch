@@ -262,6 +262,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &349579569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349579571}
+  - component: {fileID: 349579570}
+  m_Layer: 0
+  m_Name: objectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &349579570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349579569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406ae6bdd0c8fe346b0baae693dd6cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Diamond
+    prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
+    size: 1
+  - tag: Diamond1
+    prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
+    size: 2
+  - tag: Diamond2
+    prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
+    size: 1
+  - tag: Diamond3
+    prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
+    size: 1
+  - tag: Diamond4
+    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
+    size: 1
+  - tag: Diamond5
+    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
+    size: 1
+--- !u!4 &349579571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349579569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,9 +1125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Diamonds:
-  - {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
-  - {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
-  - {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
-  - {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
-  - {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
-  - {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
+  - Diamond
+  - Diamond1
+  - Diamond2
+  - Diamond3
+  - Diamond4
+  - Diamond5

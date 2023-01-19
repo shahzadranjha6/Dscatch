@@ -57,7 +57,7 @@ public class catchermovent : MonoBehaviour
     {
         if (collision.CompareTag("Collectable"))
             {
-                Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
                 AudioManager.instance.PlaySound();
                 UIManager.instance.ScoreUpdate();
                 Debug.Log("collected");
