@@ -608,6 +608,7 @@ GameObject:
   - component: {fileID: 747794529}
   - component: {fileID: 747794531}
   - component: {fileID: 747794532}
+  - component: {fileID: 747794533}
   m_Layer: 0
   m_Name: PlayerCatcher
   m_TagString: Untagged
@@ -694,6 +695,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa66052f83936f46b0a6213c5294965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: Axis
+    m_Id: 3fa7ed8e-7cc4-44e3-87f1-6947d2d46bbe
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: WASD
+      m_Id: 9b83de77-dc5b-4c44-a049-92b7c92c3b82
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: b484a9b5-ad31-42b6-b592-1af1583a16ad
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: ae5267d8-871c-4872-9843-e19e3cbd76ba
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 8bf7f437-cece-4bfb-9225-b7a029705aaa
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: bb421455-2934-453f-afad-15116eb8ce3d
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    m_Flags: 0
 --- !u!61 &747794532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -720,6 +770,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1100888, y: 0.72521913}
   m_EdgeRadius: 0
+--- !u!50 &747794533
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747794528}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1078018701
 GameObject:
   m_ObjectHideFlags: 0
