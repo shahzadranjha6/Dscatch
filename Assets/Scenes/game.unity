@@ -187,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54963022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.6286, y: -6.07, z: 0}
+  m_LocalPosition: {x: -10.6286, y: -6.22, z: 0}
   m_LocalScale: {x: 2.4321, y: 1.4616, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,6 +310,48 @@ MonoBehaviour:
   - tag: Diamond5
     prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
     size: 1
+  - tag: Diamond6
+    prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
+    size: 1
+  - tag: Diamond7
+    prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
+    size: 1
+  - tag: Diamond8
+    prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
+    size: 1
+  - tag: Diamond9
+    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
+    size: 1
+  - tag: Diamond10
+    prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
+    size: 1
+  - tag: Diamond11
+    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
+    size: 1
+  - tag: Diamond12
+    prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
+    size: 1
+  - tag: Diamond13
+    prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
+    size: 1
+  - tag: Diamond14
+    prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
+    size: 1
+  - tag: Diamond15
+    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
+    size: 1
+  - tag: Diamond16
+    prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
+    size: 1
+  - tag: Diamond17
+    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
+    size: 1
+  - tag: Diamond18
+    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
+    size: 1
+  - tag: Diamond19
+    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
+    size: 1
 --- !u!4 &349579571
 Transform:
   m_ObjectHideFlags: 0
@@ -317,7 +359,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349579569}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -378,7 +420,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.7781706
+  orthographic size: 6.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -402,7 +444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.55, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1246,7 +1288,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550633997}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1279,7 +1321,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1299,7 +1341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550633997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.51, y: 3.39, z: 0}
+  m_LocalPosition: {x: -12.51, y: 4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1318,6 +1360,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee668887b93c2e49b2f03c2d7e2219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Diamonds:
+  - Diamond
+  - Diamond1
+  - Diamond2
+  - Diamond3
+  - Diamond4
+  - Diamond5
+  - Diamond6
+  - Diamond7
+  - Diamond8
+  - Diamond9
+  - Diamond10
+  - Diamond11
+  - Diamond12
+  - Diamond13
+  - Diamond14
+  - Diamond15
+  - Diamond16
+  - Diamond17
+  - Diamond18
+  - Diamond19
 --- !u!1 &1632396040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632396040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6b85e9ad209c54ba7868fd6f21f66f, type: 3}
   m_Name: 
