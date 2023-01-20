@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3658375937918090679}
   - component: {fileID: 7667842244280187208}
   - component: {fileID: 8002279166706753299}
-  - component: {fileID: -8367965539234966721}
+  - component: {fileID: 8907314507133567557}
   m_Layer: 0
   m_Name: garnet
   m_TagString: Collectable
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!50 &-8367965539234966721
+--- !u!50 &8907314507133567557
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3610283864430074098}
   - component: {fileID: 8939509317789254280}
   - component: {fileID: 4052360570674535825}
-  - component: {fileID: 638580841542181070}
+  - component: {fileID: -4088858159666892209}
   m_Layer: 0
   m_Name: tourmaline
   m_TagString: Collectable
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!50 &638580841542181070
+--- !u!50 &-4088858159666892209
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+// this script is reponsibable for object pooling
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
