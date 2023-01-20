@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -11,80 +10,94 @@ public class UIManager : MonoBehaviour
 
     // ---GUI texts, panels, buttons, etc   
     public TextMeshProUGUI ScoreTxt;
-    public TextMeshProUGUI TimeSecondsTxt;
-    public TextMeshProUGUI TimeMinutesTxt;
+    public TextMeshProUGUI TimeTxt;
     public TextMeshProUGUI GameOverTxt;
-   
-    
+
+
 
 
 
     // ---Others
     int ScoreCount;
-    float TimeCount=30;
-    float Minutes;
-    float Seconds;
+    float Minutes = 0f;
+    float Seconds = 10f;
     public bool IsGameover = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(instance == null)
-            {
-                instance = this;
-            }
+        
+
+
+        if (instance == null)
+        {
+            instance = this;
+        }
 
         ScoreCount = 0;
         ScoreTxt.text = "Score:" + ScoreCount;
     }
 
 
-    private void Update()
+    void GameOver()
     {
-        // if (TimeCount > 0)
-        // {
-            // Minutes = Mathf.FloorToInt(TimeCount / 60);
-            // Seconds = Mathf.FloorToInt(TimeCount % 60);
-            // TimeTxt.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
-        //     TimeCount -= Time.deltaTime;
+        StopAllCoroutines();
+        Time.timeScale = 0;
+        GameOverTxt.gameObject.SetActive(true);
+    }
+    private void FixedUpdate()
+    {
+        StartCoroutine("TimerCounter");
+    }
+    public IEnumerator TimerCounter()
+    {
 
-        // }
-        // else
-        // {
-        //     IsGameover = true;
-        //     GameOverTxt.gameObject.SetActive(true);
-        //     Time.timeScale = 0;
-        // }
+
+
+
+
+        if (Seconds > 0 || Minutes > 0)
+        {
+            if (Seconds <= 0)
+            {
+                Minutes--;
+                Seconds = 59f;
+
+            }
+            Seconds -= 0.01f;
+
+            TimeTxt.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
+        }
+        else
+        {
+            GameOver();
+        }
+
+
+        yield return new WaitForSeconds(1);
+
+
+
+
+
+
+
+
+
+
+        // for seconds
+
 
     }
 
-    public IEnumerator TimerSeconds()
-        {
-            yield return new WaitForSeconds(1);
-
-            TimeCount--;
-            
-            // for seconds
-
-            
-        }
-
-    public IEnumerator TimerMinutes()
-        {
-            yield return new WaitForSeconds(60);
-
-            TimeCount--;
-            
-            // for minutes
-            
-        }
 
 
-    public  void ScoreUpdate()
+
+    public void ScoreUpdate()
     {
-        
+
         ScoreTxt.text = "Score:" + ++ScoreCount;
     }
-    
+
 }
