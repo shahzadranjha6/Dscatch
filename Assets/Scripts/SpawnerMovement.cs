@@ -14,7 +14,7 @@ public class SpawnerMovement : MonoBehaviour
     void Start()
     {
         MoveRight();
-        InvokeRepeating("SpawnObject", 1, (float)0.7);
+        InvokeRepeating("SpawnObject", 1, 0.4f);
     }
 
     //--- method to spawn object

@@ -294,64 +294,22 @@ MonoBehaviour:
   pools:
   - tag: Diamond
     prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
-    size: 1
+    size: 20
   - tag: Diamond1
     prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
-    size: 2
+    size: 20
   - tag: Diamond2
     prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
-    size: 1
+    size: 20
   - tag: Diamond3
     prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
-    size: 1
+    size: 20
   - tag: Diamond4
     prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
-    size: 1
+    size: 20
   - tag: Diamond5
     prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
-    size: 1
-  - tag: Diamond6
-    prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
-    size: 1
-  - tag: Diamond7
-    prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
-    size: 1
-  - tag: Diamond8
-    prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
-    size: 1
-  - tag: Diamond9
-    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
-    size: 1
-  - tag: Diamond10
-    prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
-    size: 1
-  - tag: Diamond11
-    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
-    size: 1
-  - tag: Diamond12
-    prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
-    size: 1
-  - tag: Diamond13
-    prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
-    size: 1
-  - tag: Diamond14
-    prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
-    size: 1
-  - tag: Diamond15
-    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
-    size: 1
-  - tag: Diamond16
-    prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
-    size: 1
-  - tag: Diamond17
-    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
-    size: 1
-  - tag: Diamond18
-    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
-    size: 1
-  - tag: Diamond19
-    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
-    size: 1
+    size: 20
 --- !u!4 &349579571
 Transform:
   m_ObjectHideFlags: 0
@@ -703,9 +661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreTxt: {fileID: 567347988}
-  TimeSecondsTxt: {fileID: 0}
-  TimeMinutesTxt: {fileID: 0}
-  GameOverTxt: {fileID: 0}
+  TimeTxt: {fileID: 1750316058}
+  GameOverTxt: {fileID: 938419371}
   IsGameover: 0
 --- !u!1 &747794528
 GameObject:
@@ -1367,20 +1324,6 @@ MonoBehaviour:
   - Diamond3
   - Diamond4
   - Diamond5
-  - Diamond6
-  - Diamond7
-  - Diamond8
-  - Diamond9
-  - Diamond10
-  - Diamond11
-  - Diamond12
-  - Diamond13
-  - Diamond14
-  - Diamond15
-  - Diamond16
-  - Diamond17
-  - Diamond18
-  - Diamond19
 --- !u!1 &1632396040
 GameObject:
   m_ObjectHideFlags: 0
