@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour
 
     // ---GUI texts, panels, buttons, etc   
     public TextMeshProUGUI ScoreTxt;
-    public TextMeshProUGUI TimeTxt;
+    public TextMeshProUGUI TimeSecondsTxt;
+    public TextMeshProUGUI TimeMinutesTxt;
     public TextMeshProUGUI GameOverTxt;
    
     
@@ -37,25 +38,47 @@ public class UIManager : MonoBehaviour
         ScoreCount = 0;
         ScoreTxt.text = "Score:" + ScoreCount;
     }
+
+
     private void Update()
     {
-        if (TimeCount > 0)
-        {
+        // if (TimeCount > 0)
+        // {
+            // Minutes = Mathf.FloorToInt(TimeCount / 60);
+            // Seconds = Mathf.FloorToInt(TimeCount % 60);
+            // TimeTxt.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
+        //     TimeCount -= Time.deltaTime;
 
-            Minutes = Mathf.FloorToInt(TimeCount / 60);
-            Seconds = Mathf.FloorToInt(TimeCount % 60);
-            TimeTxt.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
-            TimeCount -= Time.deltaTime;
-
-        }
-        else
-        {
-            IsGameover = true;
-            GameOverTxt.gameObject.SetActive(true);
-            Time.timeScale = 0;
-        }
+        // }
+        // else
+        // {
+        //     IsGameover = true;
+        //     GameOverTxt.gameObject.SetActive(true);
+        //     Time.timeScale = 0;
+        // }
 
     }
+
+    public IEnumerator TimerSeconds()
+        {
+            yield return new WaitForSeconds(1);
+
+            TimeCount--;
+            
+            // for seconds
+
+            
+        }
+
+    public IEnumerator TimerMinutes()
+        {
+            yield return new WaitForSeconds(60);
+
+            TimeCount--;
+            
+            // for minutes
+            
+        }
 
 
     public  void ScoreUpdate()
