@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class catchermovent : MonoBehaviour
 {
     
-    private int Bound = 12; 
+    private int Bound = 14; 
     Vector2 horizotal = Vector2.zero;
     int speed = 15;
     private Rigidbody2D rb;
