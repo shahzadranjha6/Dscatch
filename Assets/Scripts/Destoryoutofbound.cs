@@ -1,3 +1,4 @@
+//this scipt responsiable for Destory Diamond fall down below
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Destoryoutofbound : MonoBehaviour
         if (collision.CompareTag("Collectable"))
         {
             collision.gameObject.SetActive(false);
-            Debug.Log("DESTORY");
+            
         }
     }
 }

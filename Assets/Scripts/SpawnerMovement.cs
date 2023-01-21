@@ -1,3 +1,4 @@
+// this scipt responsiable for spawner movement 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,10 @@ public class SpawnerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public string[] Diamonds;
+    bool isSpawning = true;
 
 
-    int Bound = 10;
+    
 
 
 
@@ -16,20 +18,35 @@ public class SpawnerMovement : MonoBehaviour
     int randomEaseFunction;
 
     // Start is called before the first frame update
+    
     void Start()
     {
+        
         MoveRight();
         InvokeRepeating("SpawnObject", 1, 0.2f);
+        StartCoroutine("SpawnDelay");
+    }
+    IEnumerable SpawnDelay()
+    {
+        isSpawning = true;
+        yield return new WaitForSeconds(Random.Range(0.5f, 3f));
+        isSpawning = false;
+        StartCoroutine("SpawnDelay");
+
+
     }
 
     //--- method to spawn object
     void SpawnObject()
     {
-        Vector2 spawnpos = new Vector2(Random.Range(-Bound, Bound), transform.position.y);
-        int RandomIndex = Random.Range(0, Diamonds.Length);
+        if (isSpawning)
+        {
 
-        float RandomScale = Random.Range(0.5f, 1.5f);
-        ObjectPooler.instance.SpawnfromPool(Diamonds[RandomIndex],transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
+            int RandomIndex = Random.Range(0, Diamonds.Length);
+
+            float RandomScale = Random.Range(0.5f, 1.5f);
+            ObjectPooler.instance.SpawnfromPool(Diamonds[RandomIndex], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
+        }
     
        
     }
