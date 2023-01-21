@@ -10,11 +10,16 @@ public class SpawnerMovement : MonoBehaviour
 
     int Bound = 10;
 
+
+
+    // ---- Rough vars
+    int randomEaseFunction;
+
     // Start is called before the first frame update
     void Start()
     {
         MoveRight();
-        InvokeRepeating("SpawnObject", 1, 0.4f);
+        InvokeRepeating("SpawnObject", 1, 0.2f);
     }
 
     //--- method to spawn object
@@ -31,7 +36,7 @@ public class SpawnerMovement : MonoBehaviour
 
     void MoveRight()
         {
-            int randomEaseFunction = Random.Range(1, 5);
+            randomEaseFunction = Random.Range(1, 5);
 
             // give random by checking if conditions
             if (randomEaseFunction == 1)
@@ -59,7 +64,29 @@ public class SpawnerMovement : MonoBehaviour
     
     void MoveLeft()
         {
-            LeanTween.moveX(gameObject, -12, 4f).setEaseInElastic().setOnComplete(MoveRight);
+            randomEaseFunction = Random.Range(1, 5);
+
+            if(randomEaseFunction == 1)
+            {
+                LeanTween.moveX(gameObject, -12, 4f).setEaseInBounce().setOnComplete(MoveRight);
+            }
+            else if (randomEaseFunction == 2)
+            {
+                LeanTween.moveX(gameObject, -12, 4f).setEaseInCirc().setOnComplete(MoveRight);
+            }
+            else if (randomEaseFunction == 3)
+            {
+                LeanTween.moveX(gameObject, -12, 4f).setEaseInCubic().setOnComplete(MoveRight);
+            }
+            else if (randomEaseFunction == 4)
+            {
+                LeanTween.moveX(gameObject, -12, 4f).setEaseInElastic().setOnComplete(MoveRight);
+            }
+            else if (randomEaseFunction == 5)
+            {
+                LeanTween.moveX(gameObject, -12, 4f).setEaseInExpo().setOnComplete(MoveRight);
+            }
+
         }
 
 }

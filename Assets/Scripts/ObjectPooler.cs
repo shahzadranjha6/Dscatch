@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
+    public static ObjectPooler instance;
+
+
     [System.Serializable]
     public class Pool
     {
@@ -12,10 +15,17 @@ public class ObjectPooler : MonoBehaviour
         public GameObject prefab;
         public int size;
     }
+
+    public GameObject PoolParent;
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
-    public static ObjectPooler instance;
+
+
+    // ---- Rough vars
+    GameObject objSpawned;
+    GameObject ObjectToSpawn;
+
 
     void Start()
     {
@@ -27,12 +37,15 @@ public class ObjectPooler : MonoBehaviour
         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectpool = new Queue<GameObject>();
+
             for (int i = 0; i < pool.size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
-                objectpool.Enqueue(obj);
+                objSpawned = Instantiate(pool.prefab);
+                objSpawned.SetActive(false);
+                objectpool.Enqueue(objSpawned);
+                objSpawned.transform.parent = PoolParent.transform;
             }
+
             poolDictionary.Add(pool.tag, objectpool);
         }
 
@@ -45,7 +58,8 @@ public class ObjectPooler : MonoBehaviour
             Debug.LogWarning("Pool with the " + tag + " does not exists");
             return null;
         }
-        GameObject ObjectToSpawn = poolDictionary[tag].Dequeue();
+        
+        ObjectToSpawn = poolDictionary[tag].Dequeue();
         ObjectToSpawn.SetActive(true);
         ObjectToSpawn.transform.position = position;
         ObjectToSpawn.transform.rotation = rotation;
