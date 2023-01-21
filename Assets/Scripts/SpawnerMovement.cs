@@ -31,12 +31,35 @@ public class SpawnerMovement : MonoBehaviour
 
     void MoveRight()
         {
-            LeanTween.moveX(gameObject, 12, 4f).setOnComplete(MoveLeft);
+            int randomEaseFunction = Random.Range(1, 5);
+
+            // give random by checking if conditions
+            if (randomEaseFunction == 1)
+            {
+                LeanTween.moveX(gameObject, 12, 4f).setEaseInBounce().setOnComplete(MoveLeft);
+            }
+            else if (randomEaseFunction == 2)
+            {
+                LeanTween.moveX(gameObject, 12, 4f).setEaseInCirc().setOnComplete(MoveLeft);
+            }
+            else if (randomEaseFunction == 3)
+            {
+                LeanTween.moveX(gameObject, 12, 4f).setEaseInCubic().setOnComplete(MoveLeft);
+            }
+            else if (randomEaseFunction == 4)
+            {
+                LeanTween.moveX(gameObject, 12, 4f).setEaseInElastic().setOnComplete(MoveLeft);
+            }
+            else if (randomEaseFunction == 5)
+            {
+                LeanTween.moveX(gameObject, 12, 4f).setEaseInExpo().setOnComplete(MoveLeft);
+            }
+            
         }
     
     void MoveLeft()
         {
-            LeanTween.moveX(gameObject, -12, 4f).setOnComplete(MoveRight);
+            LeanTween.moveX(gameObject, -12, 4f).setEaseInElastic().setOnComplete(MoveRight);
         }
 
 }

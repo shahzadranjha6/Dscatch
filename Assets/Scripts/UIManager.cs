@@ -19,8 +19,8 @@ public class UIManager : MonoBehaviour
 
     // ---Others
     int ScoreCount;
-    float Minutes = 0f;
-    float Seconds = 10f;
+    float Minutes = 1f;
+    float Seconds = 60f;
     public bool IsGameover = false;
 
 
@@ -45,10 +45,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         GameOverTxt.gameObject.SetActive(true);
     }
-    // private void FixedUpdate()
-    // {
-    //     StartCoroutine("TimerCounter");
-    // }
+
+
+
+
     public IEnumerator TimerCounter()
     {
         if (Seconds > 0 || Minutes > 0)
@@ -80,7 +80,6 @@ public class UIManager : MonoBehaviour
 
     public void ScoreUpdate()
     {
-
         ScoreTxt.text = "Score:" + ++ScoreCount;
     }
 
