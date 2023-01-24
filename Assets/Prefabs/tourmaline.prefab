@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8939509317789254280}
   - component: {fileID: 4052360570674535825}
   - component: {fileID: -4088858159666892209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tourmaline
   m_TagString: Collectable
   m_Icon: {fileID: 0}

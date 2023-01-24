@@ -8,6 +8,7 @@ public class SpawnerMovement : MonoBehaviour
     // Start is called before the first frame update
     public string[] Diamonds;
     bool isSpawning = true;
+    int DelayCount = 0;
 
 
     
@@ -37,13 +38,21 @@ public class SpawnerMovement : MonoBehaviour
         if(Random.Range(0,2) == 1)
             {
                 Debug.Log("spawn delay");
-                isSpawning = false;
-                yield return new WaitForSeconds(Random.Range(1f, 4f));
                 isSpawning = true;
+                yield return new WaitForSeconds(Random.Range(1f, 4f));
+                isSpawning = false;
+                DelayCount = 0;
+
             }
         else
             {
+                DelayCount++;
                 Debug.Log("wait delay");
+                if(DelayCount==2)
+                {
+                Debug.Log("DelayCount= 3 true");
+                isSpawning = true;
+                }
                 yield return new WaitForSeconds(3);
             }
 
@@ -62,6 +71,7 @@ public class SpawnerMovement : MonoBehaviour
 
             float RandomScale = Random.Range(0.5f, 1.5f);
             ObjectPooler.instance.SpawnfromPool(Diamonds[RandomIndex], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
+            
         }
     
        

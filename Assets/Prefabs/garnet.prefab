@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7667842244280187208}
   - component: {fileID: 8002279166706753299}
   - component: {fileID: 8907314507133567557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: garnet
   m_TagString: Collectable
   m_Icon: {fileID: 0}

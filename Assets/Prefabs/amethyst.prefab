@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4048796630317613114}
   - component: {fileID: 4204019828292941379}
   - component: {fileID: -5303462517669445946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: amethyst
   m_TagString: Collectable
   m_Icon: {fileID: 0}

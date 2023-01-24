@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7251559218385711460}
   - component: {fileID: 7473699481604176716}
   - component: {fileID: 7679502669323398023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ruby
   m_TagString: Collectable
   m_Icon: {fileID: 0}

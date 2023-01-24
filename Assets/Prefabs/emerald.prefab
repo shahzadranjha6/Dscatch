@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6055681422918464611}
   - component: {fileID: 2538827901318516816}
   - component: {fileID: 2223638008968273862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: emerald
   m_TagString: Collectable
   m_Icon: {fileID: 0}
