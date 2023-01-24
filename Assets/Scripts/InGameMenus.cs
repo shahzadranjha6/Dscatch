@@ -6,10 +6,12 @@ public class InGameMenus : MonoBehaviour
     // PauseMenu and PauseButton fields to get reference
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pauseMenu;
+    
     // quitgame button mechanics
-    public void quitGame()
+    public void GoToMainMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
     //resumegame button mechanics
     public void resumeGame()
@@ -30,7 +32,12 @@ public class InGameMenus : MonoBehaviour
     public void restartGame()
     {
         pauseMenu.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1;
+    }
+    //Mainmenu Play button method
+    public void mainMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }
