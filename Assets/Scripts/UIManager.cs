@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI TimeTxt;
     public TextMeshProUGUI GameOverTxt;
+    public 
 
 
 

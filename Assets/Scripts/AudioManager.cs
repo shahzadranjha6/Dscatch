@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip DiamondCollectSound;
+    bool isplaying = false;
 
     
     // Start is called before the first frame update
@@ -20,11 +21,27 @@ public class AudioManager : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();  //-- get the audio source component
+        
     }
 
    
     public void PlaySound() 
     {
         audioSource.PlayOneShot(DiamondCollectSound);
+    }
+    public void PlayBackgroundSound() 
+    {
+        if(!isplaying)
+        {
+            audioSource.Pause();
+            isplaying = false;
+        }
+        else
+        {
+            audioSource.Play(0);
+            isplaying = true;
+        }
+
+       
     } 
 }

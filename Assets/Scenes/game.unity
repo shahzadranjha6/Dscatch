@@ -1176,6 +1176,7 @@ MonoBehaviour:
   ScoreTxt: {fileID: 567347988}
   TimeTxt: {fileID: 1750316058}
   GameOverTxt: {fileID: 938419371}
+  ScoreCount: 0
   IsGameover: 0
 --- !u!114 &667924840
 MonoBehaviour:
@@ -1697,7 +1698,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 37c679d826e2e284f8bfe39a400b081f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
