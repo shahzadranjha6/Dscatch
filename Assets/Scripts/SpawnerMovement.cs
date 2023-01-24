@@ -21,32 +21,41 @@ public class SpawnerMovement : MonoBehaviour
     
     void Start()
     {
-        
         MoveRight();
-        InvokeRepeating("SpawnObject", 1, 0.2f);
         StartCoroutine("SpawnDelay");
+        InvokeRepeating("SpawnObject", 1, 0.2f);
     }
-    IEnumerable SpawnDelay()
+    public IEnumerator SpawnDelay()
     {
-        if (UIManager.instance.IsGameover)
-        {
-            isSpawning = false;
-            StopCoroutine("SpawnDelay");
-            
-        }
-        isSpawning = true;
-        yield return new WaitForSeconds(Random.Range(0.5f, 8f));
-        isSpawning = false;
+        // if (UIManager.instance.IsGameover)
+        // {
+        //     // Debug.Log("calling again");
+        //     // isSpawning = false;
+        //     // StopCoroutine("SpawnDelay");
+        // }
+
+        if(Random.Range(0,2) == 1)
+            {
+                Debug.Log("spawn delay");
+                isSpawning = false;
+                yield return new WaitForSeconds(Random.Range(1f, 4f));
+                isSpawning = true;
+            }
+        else
+            {
+                Debug.Log("wait delay");
+                yield return new WaitForSeconds(3);
+            }
+
+
         
         StartCoroutine("SpawnDelay");
-
-
     }
 
     //--- method to spawn object
     void SpawnObject()
     {
-        if (isSpawning)
+        if (isSpawning == true)
         {
 
             int RandomIndex = Random.Range(0, Diamonds.Length);
