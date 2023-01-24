@@ -44,6 +44,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         GameOverTxt.gameObject.SetActive(true);
+        IsGameover = true;
     }
 
 

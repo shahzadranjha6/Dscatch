@@ -1974,7 +1974,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1550633997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee668887b93c2e49b2f03c2d7e2219f, type: 3}
+  m_Script: {fileID: 11500000, guid: 82b67a9a6233a564686622b74f885c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Diamonds:
