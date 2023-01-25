@@ -26,13 +26,17 @@ public class ObjectPooler : MonoBehaviour
     GameObject objSpawned;
     GameObject ObjectToSpawn;
 
+    void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+        }
+
 
     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
         foreach (Pool pool in pools)
         {

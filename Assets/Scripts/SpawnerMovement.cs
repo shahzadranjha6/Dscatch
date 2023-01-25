@@ -1,31 +1,52 @@
-// this scipt responsiable for spawner movement 
+// this scipt responsiable for spawner movement and spawning objects
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static SpawnerMovement instance;
+
     public string[] Diamonds;
     bool isSpawning = true;
     int DelayCount = 0;
-
-
-    
+    public float delay_frequency = 0.7f;
 
 
 
     // ---- Rough vars
     int randomEaseFunction;
+    ObjectPooler objectPooler;
+    int RandomIndex;
+    float RandomScale;
 
-    // Start is called before the first frame update
-    
+
+    void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+        }
+
+
+
     void Start()
     {
+        objectPooler = ObjectPooler.instance;
+
         MoveRight();
         StartCoroutine("SpawnDelay");
-        InvokeRepeating("SpawnObject", 1, 0.2f);
+
+        // InvokeRepeating("SpawnObject", 1, 0.2f);
+
+        StartCoroutine("SpawnObject");
+
     }
+
+
+
+
     public IEnumerator SpawnDelay()
     {
         // if (UIManager.instance.IsGameover)
@@ -48,34 +69,46 @@ public class SpawnerMovement : MonoBehaviour
             {
                 DelayCount++;
                 Debug.Log("wait delay");
+
                 if(DelayCount==2)
                 {
-                Debug.Log("DelayCount= 3 true");
-                isSpawning = true;
+                    Debug.Log("DelayCount= 3 true");
+                    isSpawning = true;
                 }
-                yield return new WaitForSeconds(0.1f*UIManager.instance.Seconds);
+                
+                yield return new WaitForSeconds(3);
             }
 
-
-        
         StartCoroutine("SpawnDelay");
     }
 
+
+
+
+
     //--- method to spawn object
-    void SpawnObject()
+    IEnumerator SpawnObject()
     {
         if (isSpawning == true)
         {
+            RandomIndex = Random.Range(0, Diamonds.Length);
 
-            int RandomIndex = Random.Range(0, Diamonds.Length);
-
-            float RandomScale = Random.Range(0.5f, 1.5f);
-            ObjectPooler.instance.SpawnfromPool(Diamonds[RandomIndex], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
-            
+            RandomScale = Random.Range(0.5f, 1.5f);
+            objectPooler.SpawnfromPool(Diamonds[RandomIndex], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
         }
-    
-       
+
+        //--- larger the frequency, smaller the wait time
+
+        // DelayFrequency -= .05f;
+
+        Debug.Log("DelayFrequency: " + delay_frequency);
+        
+        yield return new WaitForSeconds(delay_frequency);
+
+        StartCoroutine("SpawnObject");
     }
+
+
 
     void MoveRight()
         {
@@ -102,8 +135,11 @@ public class SpawnerMovement : MonoBehaviour
             {
                 LeanTween.moveX(gameObject, 6, 2f).setEaseInExpo().setOnComplete(MoveRight2);
             }
-            
         }
+
+
+
+
     void MoveRight2()
         {
             randomEaseFunction = Random.Range(1, 5);
@@ -157,7 +193,10 @@ public class SpawnerMovement : MonoBehaviour
                 LeanTween.moveX(gameObject, -6, 2f).setEaseInExpo().setOnComplete(MoveLeft2);
             }
 
-        }void MoveLeft2()
+        }
+
+
+    void MoveLeft2()
         {
             randomEaseFunction = Random.Range(1, 5);
 

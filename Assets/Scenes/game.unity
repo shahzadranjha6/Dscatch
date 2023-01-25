@@ -230,7 +230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -76.684, y: -61.039}
+  m_AnchoredPosition: {x: -76.68408, y: -61.039}
   m_SizeDelta: {x: 96.666, y: 100.261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89548433
@@ -1837,6 +1837,7 @@ MonoBehaviour:
   Diamonds:
   - Diamond
   - Diamond1
+  delay_frequency: 0.8
 --- !u!1 &1632396040
 GameObject:
   m_ObjectHideFlags: 0

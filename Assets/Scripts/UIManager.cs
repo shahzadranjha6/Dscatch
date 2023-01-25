@@ -59,10 +59,16 @@ public class UIManager : MonoBehaviour
         if (Seconds > 0 || Minutes > 0)
         {
             if (Seconds <= 0)   //-- 1 minute deducted
-            {
-                Minutes--;
-                Seconds = 19f;
-            }
+                {
+                    Minutes--;
+
+                    Seconds = 19f;
+                }
+
+            if(SpawnerMovement.instance.delay_frequency > 0.25f)
+                {
+                    SpawnerMovement.instance.delay_frequency -= 0.035f;
+                }
 
             Seconds -= 1f;
 
