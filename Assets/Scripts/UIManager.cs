@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
         }
 
         ScoreCount = 0;
-        ScoreTxt.text = "Score:" + ScoreCount;
+        ScoreTxt.text = "DSL Tokens:" + ScoreCount;
         
         StartCoroutine("TimerCounter");
 
@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
             if (Seconds <= 0)   //-- 1 minute deducted
             {
                 Minutes--;
-                Seconds = 59f;
+                Seconds = 19f;
             }
 
             Seconds -= 1f;
@@ -82,7 +82,7 @@ public class UIManager : MonoBehaviour
 
     public void ScoreUpdate()
     {
-        ScoreTxt.text = "Score:" + ++ScoreCount;
+        ScoreTxt.text = "DSL Tokens:" + ++ScoreCount;
     }
 
 }

@@ -31,15 +31,13 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayBackgroundSound() 
     {
-        if(!isplaying)
+        if(audioSource.mute)
         {
-            audioSource.Pause();
-            isplaying = false;
+            audioSource.mute = false;
         }
         else
         {
-            audioSource.Play(0);
-            isplaying = true;
+            audioSource.mute = true;
         }
 
        
