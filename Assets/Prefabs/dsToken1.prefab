@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2369450909492205263}
   m_Layer: 6
   m_Name: dsToken1
-  m_TagString: Collectable
+  m_TagString: BlackToken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

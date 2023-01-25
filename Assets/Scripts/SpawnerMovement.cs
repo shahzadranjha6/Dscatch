@@ -53,7 +53,7 @@ public class SpawnerMovement : MonoBehaviour
                 Debug.Log("DelayCount= 3 true");
                 isSpawning = true;
                 }
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(0.1f*UIManager.instance.Seconds);
             }
 
 

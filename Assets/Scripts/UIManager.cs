@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     // ---Others
     int ScoreCount;
     float Minutes = 0f;
-    float Seconds = 20f;
+    public float Seconds = 20f;
     public bool IsGameover = false;
 
 
@@ -86,6 +86,10 @@ public class UIManager : MonoBehaviour
     public void ScoreUpdate()
     {
         ScoreTxt.text = "DSL Tokens:" + ++ScoreCount;
+    }
+    public void ScoreUpdateMinus()
+    {
+        ScoreTxt.text = "DSL Tokens:" + --ScoreCount;
     }
     public void GoToMainMenu()
     {

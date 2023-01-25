@@ -1032,6 +1032,7 @@ MonoBehaviour:
   TimeTxt: {fileID: 1750316058}
   GameOverTxt: {fileID: 938419371}
   gameoverMenu: {fileID: 144224016}
+  Seconds: 20
   IsGameover: 0
 --- !u!114 &667924840
 MonoBehaviour:
@@ -1260,7 +1261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747794528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.8426, y: -3.2853, z: 0}
+  m_LocalPosition: {x: -11.63, y: -3.2853, z: 0}
   m_LocalScale: {x: 2.172595, y: 1.8614937, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

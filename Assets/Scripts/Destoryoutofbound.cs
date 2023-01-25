@@ -8,7 +8,7 @@ public class Destoryoutofbound : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Collectable"))
+        if (collision.CompareTag("BlackToken")|| collision.CompareTag("RedToken"))
         {
             collision.gameObject.SetActive(false);
             

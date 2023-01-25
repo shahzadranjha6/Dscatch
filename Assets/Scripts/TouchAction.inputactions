@@ -1,0 +1,34 @@
+{
+    "name": "TouchAction",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "85e91723-0aee-472b-b336-3a20384cd53b",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "32c1218c-7fb4-4461-aafa-a203daf5f4aa",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "SlowTap",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "964017c0-9cb0-44c3-a036-6d0d685e2e14",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

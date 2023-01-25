@@ -15,6 +15,8 @@ public class catchermovent : MonoBehaviour
     
     //Playermovement control by input system
     public InputAction playerControls;
+    public Touchscreen TouchControls;
+
     
     //enabling Player Controls
     private void OnEnable()
@@ -55,11 +57,18 @@ public class catchermovent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Collectable"))
+        if (collision.CompareTag("BlackToken"))
             {
             collision.gameObject.SetActive(false);
                 AudioManager.instance.PlaySound();
                 UIManager.instance.ScoreUpdate();
+                Debug.Log("collected");
+            }   
+            else if (collision.CompareTag("RedToken"))
+            {
+                collision.gameObject.SetActive(false);
+                AudioManager.instance.PlaySound();
+                UIManager.instance.ScoreUpdateMinus();
                 Debug.Log("collected");
             }
     }
