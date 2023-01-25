@@ -20,8 +20,8 @@ public class UIManager : MonoBehaviour
 
     // ---Others
     int ScoreCount;
-    float Minutes = 1f;
-    float Seconds = 60f;
+    float Minutes = 0f;
+    float Seconds = 20f;
     public bool IsGameover = false;
 
 

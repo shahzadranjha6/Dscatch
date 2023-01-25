@@ -537,22 +537,10 @@ MonoBehaviour:
   PoolParent: {fileID: 195987868}
   pools:
   - tag: Diamond
-    prefab: {fileID: 2481070445735883562, guid: bef8d6e5b8452d74e9043a41b4dce189, type: 3}
+    prefab: {fileID: 2224921140456353141, guid: fb0f2166343f3d945992d3150749139d, type: 3}
     size: 20
   - tag: Diamond1
-    prefab: {fileID: 5504585480428840068, guid: 4199695db2008fa48ac44680d9fa3c3e, type: 3}
-    size: 20
-  - tag: Diamond2
-    prefab: {fileID: 6335889153540554008, guid: 0cce9dfcb7edbc64ba892c9331d37fdd, type: 3}
-    size: 20
-  - tag: Diamond3
-    prefab: {fileID: 4048796630317613117, guid: 76dbeebc52b59d546ad9f12d6dfd4588, type: 3}
-    size: 20
-  - tag: Diamond4
-    prefab: {fileID: 4049021008999279507, guid: 6dd250124da885945ba74cefcc67133e, type: 3}
-    size: 20
-  - tag: Diamond5
-    prefab: {fileID: 3775347899867845833, guid: 9790076e46fc93340bbbda2fa3361caf, type: 3}
+    prefab: {fileID: 7086460034346636525, guid: b4ae8e930387b3d4fa053d7e04247dff, type: 3}
     size: 20
 --- !u!4 &349579571
 Transform:
@@ -1982,10 +1970,6 @@ MonoBehaviour:
   Diamonds:
   - Diamond
   - Diamond1
-  - Diamond2
-  - Diamond3
-  - Diamond4
-  - Diamond5
 --- !u!1 &1632396040
 GameObject:
   m_ObjectHideFlags: 0
