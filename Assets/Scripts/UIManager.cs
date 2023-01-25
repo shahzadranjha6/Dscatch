@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI TimeTxt;
     public TextMeshProUGUI GameOverTxt;
-    public 
+    // game over menu
+    [SerializeField] private GameObject gameoverMenu;
 
 
 
@@ -46,6 +48,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         GameOverTxt.gameObject.SetActive(true);
         IsGameover = true;
+        gameoverMenu.SetActive(true);
     }
 
 
@@ -83,6 +86,18 @@ public class UIManager : MonoBehaviour
     public void ScoreUpdate()
     {
         ScoreTxt.text = "DSL Tokens:" + ++ScoreCount;
+    }
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+    }
+    //restartgame button mechanics
+    public void restartGame()
+    {
+        gameoverMenu.SetActive(false);
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
 
 }

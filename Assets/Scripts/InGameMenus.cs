@@ -3,9 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenus : MonoBehaviour
 {
+    public static InGameMenus instance;
     // PauseMenu and PauseButton fields to get reference
     [SerializeField] private GameObject pauseButton;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] public GameObject pauseMenu;
     
     // quitgame button mechanics
     public void GoToMainMenu()

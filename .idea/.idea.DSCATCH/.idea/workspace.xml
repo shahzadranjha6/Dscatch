@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a4ac3b9a-5e49-4b34-b9e2-1b66ce98e618" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DSCATCH/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DSCATCH/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Audio Button.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Audio Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/dsToken1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/dsToken1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/dsToken2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/dsToken2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InGameMenus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InGameMenus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,7 @@
       <workItem from="1674293820826" duration="4728000" />
       <workItem from="1674551219989" duration="2719000" />
       <workItem from="1674633225557" duration="1117000" />
-      <workItem from="1674634599091" duration="1142000" />
+      <workItem from="1674634599091" duration="3333000" />
     </task>
     <servers />
   </component>
