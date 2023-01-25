@@ -10,12 +10,12 @@ public class catchermovent : MonoBehaviour
     
     private int Bound = 14; 
     Vector2 horizotal = Vector2.zero;
-    int speed = 15;
+    int speed = 25;
     private Rigidbody2D rb;
     
     //Playermovement control by input system
     public InputAction playerControls;
-    public Touchscreen TouchControls;
+    
 
     
     //enabling Player Controls
@@ -36,7 +36,8 @@ public class catchermovent : MonoBehaviour
     //reading value of inputsystem
     void Update()
     {
-        horizotal = playerControls.ReadValue<Vector2>();
+        // horizotal = playerControls.ReadValue<Vector2>();
+        touchMove();
     //bounding player movement to the camera
         if (transform.position.x >= Bound)
         {
@@ -50,10 +51,10 @@ public class catchermovent : MonoBehaviour
         }
     }
     //setting velocity of player
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(horizotal.x * speed,horizotal.y*0);
-    }
+    // private void FixedUpdate()
+    // {
+    //     rb.velocity = new Vector2(mousePos.x * speed,horizotal.y*0);
+    // }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -71,5 +72,26 @@ public class catchermovent : MonoBehaviour
                 UIManager.instance.ScoreUpdateMinus();
                 Debug.Log("collected");
             }
+    }
+    //touch movement
+    void touchMove()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (mousePos.x < -1)
+            {
+                //move left
+                rb.velocity = new Vector2(-speed ,0);
+                
+            }
+            else if (mousePos.x > 1)
+            {
+                //move right
+                rb.velocity = new Vector2(speed, 0);
+            }
+            
+        }
     }
 }
