@@ -24,7 +24,7 @@ public class SpawnerMenu : MonoBehaviour
     {
         
         MoveRight();
-        InvokeRepeating("SpawnObject", 1, 0.3f);
+        InvokeRepeating("SpawnBlackToken", 1, 0.3f);
         StartCoroutine("SpawnDelay");
     }
     IEnumerable SpawnDelay()

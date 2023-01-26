@@ -10,7 +10,8 @@ public class SpawnerMovement : MonoBehaviour
     public string[] Diamonds;
     bool isSpawning = true;
     int DelayCount = 0;
-    public float delay_frequency = 0.7f;
+    public float delay_frequencyBlackToken = 0.7f;
+    public float delay_frequencyRedToken = 0f;
 
 
 
@@ -38,9 +39,10 @@ public class SpawnerMovement : MonoBehaviour
         MoveRight();
         StartCoroutine("SpawnDelay");
 
-        // InvokeRepeating("SpawnObject", 1, 0.2f);
+        // InvokeRepeating("SpawnBlackToken", 1, 0.2f);
 
-        StartCoroutine("SpawnObject");
+        StartCoroutine("SpawnBlackToken");
+        StartCoroutine("SpawnRedToken");
 
     }
 
@@ -87,26 +89,48 @@ public class SpawnerMovement : MonoBehaviour
 
 
     //--- method to spawn object
-    IEnumerator SpawnObject()
+    IEnumerator SpawnBlackToken()
     {
         if (isSpawning == true)
         {
-            RandomIndex = Random.Range(0, Diamonds.Length);
+            
 
             RandomScale = Random.Range(0.5f, 1.5f);
-            objectPooler.SpawnfromPool(Diamonds[RandomIndex], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
+            objectPooler.SpawnfromPool(Diamonds[0], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
         }
 
         //--- larger the frequency, smaller the wait time
 
         // DelayFrequency -= .05f;
 
-        Debug.Log("DelayFrequency: " + delay_frequency);
+        Debug.Log("DelayFrequency: " + delay_frequencyBlackToken);
         
-        yield return new WaitForSeconds(delay_frequency);
+        yield return new WaitForSeconds(delay_frequencyBlackToken);
 
-        StartCoroutine("SpawnObject");
+        StartCoroutine("SpawnBlackToken");
     }
+    IEnumerator SpawnRedToken()
+    {
+        if (isSpawning == true)
+        {
+            //RandomIndex = Random.Range(0, Diamonds.Length);
+
+            RandomScale = Random.Range(0.5f, 1.5f);
+            objectPooler.SpawnfromPool(Diamonds[1], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
+        }
+
+        //--- larger the frequency, smaller the wait time
+
+        // DelayFrequency -= .05f;
+
+        
+
+        yield return new WaitForSeconds(delay_frequencyRedToken);
+
+        StartCoroutine("SpawnRedToken");
+    }
+
+
 
 
 
