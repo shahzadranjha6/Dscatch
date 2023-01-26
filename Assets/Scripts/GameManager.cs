@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObject", 1, 2);
+        InvokeRepeating("SpawnBlackToken", 1, 2);
     }
 
         //--- method to spawn object

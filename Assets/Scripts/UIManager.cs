@@ -62,12 +62,16 @@ public class UIManager : MonoBehaviour
                 {
                     Minutes--;
 
-                    Seconds = 19f;
+                    Seconds = 59f;
                 }
 
-            if(SpawnerMovement.instance.delay_frequency > 0.25f)
+            if(SpawnerMovement.instance.delay_frequencyBlackToken > 0.25f)
                 {
-                    SpawnerMovement.instance.delay_frequency -= 0.035f;
+                    SpawnerMovement.instance.delay_frequencyBlackToken -= 0.035f;
+                }
+            if(SpawnerMovement.instance.delay_frequencyRedToken < 0.25f)
+                {
+                    SpawnerMovement.instance.delay_frequencyRedToken += 0.035f;
                 }
 
             Seconds -= 1f;
@@ -95,7 +99,12 @@ public class UIManager : MonoBehaviour
     }
     public void ScoreUpdateMinus()
     {
-        ScoreTxt.text = "DSL Tokens:" + --ScoreCount;
+        --ScoreCount;
+        if (ScoreCount < 0) 
+        {
+            ScoreCount = 0;
+        }
+        ScoreTxt.text = "DSL Tokens:" + ScoreCount;
     }
     public void GoToMainMenu()
     {
