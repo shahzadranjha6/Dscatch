@@ -65,9 +65,7 @@ public class UIManager : MonoBehaviour
                     Seconds = 59f;
                 }
 
-            
-
-            Seconds -= 1f;
+                        Seconds -= 1f;
 
             TimeTxt.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
         }
