@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI GameOverTxt;
     // game over menu
     [SerializeField] private GameObject gameoverMenu;
-
+    //movementbutton
+    [SerializeField] private GameObject movementButton;
 
 
 
@@ -49,6 +50,7 @@ public class UIManager : MonoBehaviour
         GameOverTxt.gameObject.SetActive(true);
         IsGameover = true;
         gameoverMenu.SetActive(true);
+        movementButton.SetActive(false);
     }
 
 
@@ -106,6 +108,7 @@ public class UIManager : MonoBehaviour
     public void restartGame()
     {
         gameoverMenu.SetActive(false);
+        movementButton.SetActive(true);
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
