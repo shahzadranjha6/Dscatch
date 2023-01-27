@@ -10,8 +10,29 @@ public class SpawnerMovement : MonoBehaviour
     public string[] Diamonds;
     bool isSpawning = true;
     int DelayCount = 0;
-    public float delay_frequencyBlackToken = 0.7f;
-    public float delay_frequencyRedToken = 0f;
+
+    // hide in inspector
+    private float delay_frequencyBlackToken;
+    public void setDelayFrequencyOfBlackToken(float value)
+    {
+        delay_frequencyBlackToken = value;
+    }
+    public int getDelayFrequencyOfBlackToken()
+    {
+        return DelayCount;
+    }
+
+
+    private float delay_frequencyRedToken;
+    public int getDelayFrequencyOfRedToken()
+    {
+        return DelayCount;
+    }
+    public void setDelayFrequencyOfRedToken(float value)
+    {
+        delay_frequencyRedToken = value;
+    }
+
 
 
 
@@ -34,6 +55,10 @@ public class SpawnerMovement : MonoBehaviour
 
     void Start()
     {
+        delay_frequencyBlackToken = 1.7f;
+        delay_frequencyRedToken = 0.7f;
+
+
         objectPooler = ObjectPooler.instance;
 
         MoveRight();
@@ -78,7 +103,7 @@ public class SpawnerMovement : MonoBehaviour
                     isSpawning = true;
                 }
                 
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(1.5f);
             }
 
         StartCoroutine("SpawnDelay");
@@ -113,8 +138,6 @@ public class SpawnerMovement : MonoBehaviour
     {
         if (isSpawning == true)
         {
-            //RandomIndex = Random.Range(0, Diamonds.Length);
-
             RandomScale = Random.Range(0.5f, 1.5f);
             objectPooler.SpawnfromPool(Diamonds[1], transform.position, Quaternion.Euler(0, 0, Random.Range(-180, 180))).transform.localScale = new Vector3(RandomScale, RandomScale, 0.5f);
         }
@@ -123,12 +146,37 @@ public class SpawnerMovement : MonoBehaviour
 
         // DelayFrequency -= .05f;
 
-        
-
         yield return new WaitForSeconds(delay_frequencyRedToken);
 
         StartCoroutine("SpawnRedToken");
     }
+
+
+    IEnumerator spawnTokens()
+        {
+            if(UIManager.instance.Seconds < 5)
+                {
+                    // spawn black
+                    // spawn black
+                    // spawn black
+                    // spawn red
+                }
+            if(UIManager.instance.Seconds < 10)
+                {
+                    // spawn black
+                    // spawn black
+                    // spawn red
+                    // spawn red
+                }
+            if(UIManager.instance.Seconds < 15)
+                {
+                    // spawn black
+                    // spawn red
+                    // spawn red
+                }
+
+            yield return new WaitForSeconds(0.6f);
+        }
 
 
 
