@@ -23,6 +23,14 @@ public class SpawnerMovement : MonoBehaviour
     Vector2 PositionBlack;
 
 
+    // --- rough variables
+    UIManager UIManager;
+
+
+
+
+
+
     internal void Awake()
     {
         if (instance == null)
@@ -36,6 +44,7 @@ public class SpawnerMovement : MonoBehaviour
         //delay_frequencyBlackToken = 1.7f;
         // delay_frequencyRedToken = 0.7f;
 
+        UIManager = UIManager.instance;
 
         objectPooler = ObjectPooler.instance;
 
@@ -102,34 +111,44 @@ public class SpawnerMovement : MonoBehaviour
 
     internal IEnumerator spawnTokens()
     {
-        if (UIManager.instance.Seconds < 5)
+        if (UIManager.Seconds < 5)
         {
+            Debug.Log(  UIManager.Seconds +" < 5 = " +  (UIManager.Seconds<5));
             // spawn black
             // spawn black
             // spawn black
             // spawn red
+            // SpawnBlackToken();
             SpawnBlackToken();
             SpawnBlackToken();
-            SpawnBlackToken();
-            SpawnRedToken();
-        }
-        if (UIManager.instance.Seconds < 10)
-        {
-            // spawn black
-            // spawn black
-            // spawn red
-            // spawn red
             SpawnBlackToken();
             SpawnBlackToken();
             SpawnRedToken();
             SpawnRedToken();
         }
-        if (UIManager.instance.Seconds < 21)
+        else if (UIManager.Seconds < 10)
         {
+            Debug.Log(  UIManager.Seconds +" < 10 = " +  (UIManager.Seconds<10));
+            // spawn black
             // spawn black
             // spawn red
             // spawn red
             SpawnBlackToken();
+            SpawnBlackToken();
+            SpawnBlackToken();
+            SpawnRedToken();
+            SpawnRedToken();
+            SpawnRedToken();
+        }
+        else if (UIManager.Seconds < 21)
+        {
+            Debug.Log(  UIManager.Seconds +" < 20 = " +  (UIManager.Seconds<20));
+            // spawn black
+            // spawn red
+            // spawn red
+            SpawnBlackToken();
+            SpawnBlackToken();
+            SpawnRedToken();
             SpawnRedToken();
             SpawnRedToken();
         }

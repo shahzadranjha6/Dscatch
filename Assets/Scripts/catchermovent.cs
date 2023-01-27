@@ -9,9 +9,9 @@ using UnityEngine.UIElements;
 public class catchermovent : MonoBehaviour
 {
     
-    // private int Bound = 14; 
+    private int Bound = 14; 
     //horizontal movement for playercontrols for buttons
-    //Vector2 horizotal = Vector2.zero;
+    // Vector2 horizotal = Vector2.zero;
     private Rigidbody2D rb;
 
     //moveleft bool assign to left UI button
@@ -24,11 +24,11 @@ public class catchermovent : MonoBehaviour
     [SerializeField]
     private int horizontal_Speed;
     [SerializeField]
-    int speed = 20;
+    int speed = 10;
 
     //
     // //Playermovement control by input system
-    // public InputAction playerControls;
+    public InputAction playerControls;
     //
     // //enabling Player Controls
     // private void OnEnable()
@@ -50,31 +50,29 @@ public class catchermovent : MonoBehaviour
     //reading value of input by canvas button
     void Update()
     {
-        // if (moveleft)
-        // {
-        //     leftMove();
-        // }
-        // else if (moveright)
-        // {
-        //     rightMove();
-        // }
+        if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            leftMove();
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            rightMove();
+        }
 
-        // rb.AddForce(new Vector2(horizontal_Speed * Time.deltaTime, 0));
 
         // horizotal = playerControls.ReadValue<Vector2>();
-        // touchMove() //touch move method 
         
         //bounding player movement to the camera
-        // if (transform.position.x >= Bound)
-        // {
-        //     transform.position = new Vector2(Bound, transform.position.y);
+        if (transform.position.x >= Bound)
+        {
+            transform.position = new Vector2(Bound, transform.position.y);
     
-        // }
+        }
     
-        // if (transform.position.x <= -Bound)
-        // {
-        //     transform.position = new Vector2(-Bound, transform.position.y);
-        // }
+        if (transform.position.x <= -Bound)
+        {
+            transform.position = new Vector2(-Bound, transform.position.y);
+        }
     }
 
     void FixedUpdate()

@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     // ---Others
     int ScoreCount;
     float Minutes = 0f;
-    public float Seconds = 20f;
+    public int Seconds = 20;
     public bool IsGameover = false;
 
 
@@ -62,10 +62,10 @@ public class UIManager : MonoBehaviour
                 {
                     Minutes--;
 
-                    Seconds = 59f;
+                    Seconds = 59;
                 }
 
-                        Seconds -= 1f;
+                        Seconds -= 1;
 
             TimeTxt.text = string.Format("{0:00}:{1:00}", Minutes, Seconds);
         }
