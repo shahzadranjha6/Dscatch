@@ -65,16 +65,7 @@ public class UIManager : MonoBehaviour
                     Seconds = 59f;
                 }
 
-            if(SpawnerMovement.instance.getDelayFrequencyOfBlackToken() > 0.25f)
-                {
-                    SpawnerMovement.instance.setDelayFrequencyOfBlackToken(SpawnerMovement.instance.getDelayFrequencyOfBlackToken() - 0.9f);
-                    Debug.Log("Black token delay frequency: " + SpawnerMovement.instance.getDelayFrequencyOfBlackToken());
-                }
-            if (SpawnerMovement.instance.getDelayFrequencyOfRedToken() > 0.25f)
-                {
-                    SpawnerMovement.instance.setDelayFrequencyOfRedToken(SpawnerMovement.instance.getDelayFrequencyOfRedToken() + 0.9f);
-                    Debug.Log("Red token delay frequency: " + SpawnerMovement.instance.getDelayFrequencyOfRedToken());
-                }
+            
 
             Seconds -= 1f;
 
