@@ -41,6 +41,10 @@ public class catchermovent : MonoBehaviour
     //     playerControls.Disable();
     // }
     //rigidbody reference passed to script
+
+    [Header("Damage VFX")]
+    [Tooltip("VFX to play when the player takes damage")]
+    [SerializeField] private ParticleSystem damageVFX;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -113,7 +117,11 @@ public class catchermovent : MonoBehaviour
             AudioManager.instance.PlaySound();
             UIManager.instance.ScoreUpdateMinus();
             Debug.Log("collected");
+            
+            damageVFX.Play();
         }
+
+
     }
 
     //touch movement
