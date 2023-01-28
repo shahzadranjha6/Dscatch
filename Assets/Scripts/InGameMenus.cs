@@ -33,8 +33,8 @@ public class InGameMenus : MonoBehaviour
     public void restartGame()
     {
         pauseMenu.SetActive(false);
-        SceneManager.LoadScene(1);
         Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
     //Mainmenu Play button method
     public void mainMenu()

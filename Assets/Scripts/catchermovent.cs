@@ -47,6 +47,8 @@ public class catchermovent : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         transform.position = new Vector2(0, -3.2853f);  // should spawn from starting Position
+
+        AudioManager_Script.instance.Play("theme");
     }
     //reading value of input by canvas button
     void Update()
@@ -81,39 +83,48 @@ public class catchermovent : MonoBehaviour
             rb.AddForce(new Vector2(horizontal_Speed * speed, 0), ForceMode2D.Impulse  );
         }
    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("BlackToken"))
-            {
-            collision.gameObject.SetActive(false);
-                AudioManager.instance.PlaySound();
-                UIManager.instance.ScoreUpdate();
-                Debug.Log("collected");
-            }   
-            else if (collision.CompareTag("RedToken"))
-            {
-                collision.gameObject.SetActive(false);
-                AudioManager.instance.PlaySound();
-                UIManager.instance.ScoreUpdateMinus();
-                Debug.Log("collected");
-            }
-    }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("BlackToken"))
+    //         {
+    //         collision.gameObject.SetActive(false);
+    //             // AudioManager.instance.PlaySound();
+    //             AudioManager_Script.instance.Play("collect");
+    //             UIManager.instance.ScoreUpdate();
+    //             Debug.Log("collected");
+    //         }   
+    //         else if (collision.CompareTag("RedToken"))
+    //         {
+    //             collision.gameObject.SetActive(false);
+    //             // AudioManager.instance.PlaySound();
+
+    //             AudioManager_Script.instance.Play("damage");
+    //             UIManager.instance.ScoreUpdateMinus();
+    //             Debug.Log("collected");
+    //         }
+    // }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BlackToken"))
         {
             collision.gameObject.SetActive(false);
-            AudioManager.instance.PlaySound();
+            // AudioManager.instance.PlaySound();
+            AudioManager_Script.instance.Play("collect");
+
             UIManager.instance.ScoreUpdate();
             Debug.Log("collected");
         }
         else if (collision.gameObject.CompareTag("RedToken"))
         {
             collision.gameObject.SetActive(false);
-            AudioManager.instance.PlaySound();
+            // AudioManager.instance.PlaySound();
+
+
             UIManager.instance.ScoreUpdateMinus();
             Debug.Log("collected");
+
+            AudioManager_Script.instance.Play("damage");
 
             StartCoroutine("CameraShake");      //-- shake cam
 
