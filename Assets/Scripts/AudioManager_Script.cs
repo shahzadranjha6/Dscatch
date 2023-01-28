@@ -16,6 +16,7 @@ public class AudioManager_Script : MonoBehaviour
         if (instance == null)
             {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
             }
         else
             {
@@ -23,7 +24,6 @@ public class AudioManager_Script : MonoBehaviour
                 return;
             }
 
-        DontDestroyOnLoad(gameObject);
             
     }
 
@@ -42,15 +42,28 @@ public class AudioManager_Script : MonoBehaviour
                 s.source.loop = s.loop;
             }
 
-        Play("Theme");
+        Play("theme");
     }
 
     // we will cal this function From outside the Class
     public void Play(string name)
         {
             sound s = Array.Find(sounds, sound => sound.name == name);
+
+                if (s != null)
+                {
+                    Debug.Log("Sound found: " + name);
+                    s.source.Play();
+                }
+                else
+                {
+                    Debug.LogError("Sound not found: " + name);
+                }
+
             Debug.Log(s);
             s.source.Play();
+
+
 
             // s.source.PlayOneShot(s.source.clip);
         }
