@@ -25,28 +25,25 @@ public class catchermovent : MonoBehaviour
     private int horizontal_Speed;
     [SerializeField]
     int speed = 10;
-
-    //
-    // //Playermovement control by input system
     public InputAction playerControls;
-    //
-    // //enabling Player Controls
-    // private void OnEnable()
-    // {
-    //     playerControls.Enable();
-    // }
-    // //disable player control
-    // private void OnDisable()
-    // {
-    //     playerControls.Disable();
-    // }
-    //rigidbody reference passed to script
+
+
+
+
+
+
 
     [Header("Damage VFX")]
     [Tooltip("VFX to play when the player takes damage")]
     [SerializeField] private ParticleSystem damageVFX;
+    private Vector3 orignalCamPos;
+
+
     private void Start()
     {
+        orignalCamPos = Camera.main.transform.position;
+
+
         rb = GetComponent<Rigidbody2D>();
 
         transform.position = new Vector2(0, -3.2853f);  // should spawn from starting Position
@@ -117,13 +114,17 @@ public class catchermovent : MonoBehaviour
             AudioManager.instance.PlaySound();
             UIManager.instance.ScoreUpdateMinus();
             Debug.Log("collected");
-            
+
+            StartCoroutine("CameraShake");      //-- shake cam
+
             damageVFX.Play();
         }
 
 
     }
 
+
+    #region TouchMovement
     //touch movement
     // void touchMove()
     // {
@@ -145,6 +146,7 @@ public class catchermovent : MonoBehaviour
     //         
     //     }
     // }
+    #endregion
     
     //left movement button UI
      public void leftMove()
@@ -166,5 +168,49 @@ public class catchermovent : MonoBehaviour
             horizontal_Speed = got_Speed;
         }
 
+
+
+    // --- camera shake
+
+    // private IEnumerator CameraShake()
+    //     {
+    //         for (int i = 0; i < 5; i++)
+    //         {
+    //             Camera cam = Camera.main;       //--- using for camera shake
+
+    //             Vector2 randomPos = UnityEngine.Random.insideUnitCircle * 0.2f;     //--> generating a random value
+
+
+    //             cam.transform.position = new Vector3(UnityEngine.Random.Range(cam.transform.position.x , cam.transform.position.x+.3f)  , cam.transform.position.y , cam.transform.position.z );  //-->> set randomly generated position
+
+    //             yield return new WaitForSeconds(0.01f);
+    //             // yield return null;
+    //             // yield return null;      //-->> this means we wait for the current frame to be finished(returning null)
+    //                                         //--> after returning the loop will run again [method will not terminate]
+    //         }   
+
+    //         Camera.main.transform.position = orignalCamPos;         //-->> again setting the position to default position
+    //     }
+
+    private IEnumerator CameraShake()
+        {
+            Camera cam = Camera.main;
+            Vector3 originalPos = cam.transform.position;
+
+            float shakeDuration = 0.3f; // adjust duration to your liking
+            float shakeAmount = 0.2f; // adjust amount to your liking
+
+            float startTime = Time.time;
+
+            while (Time.time < startTime + shakeDuration)
+            {
+                Vector2 randomPos = UnityEngine.Random.insideUnitCircle * shakeAmount;
+                cam.transform.position = new Vector3(originalPos.x + randomPos.x, originalPos.y + randomPos.y, originalPos.z);
+
+                yield return null;
+            }
+
+            cam.transform.position = originalPos;
+        }
 
 }
