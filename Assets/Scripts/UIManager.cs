@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI TimeTxt;
     public TextMeshProUGUI GameOverTxt;
+    public TextMeshProUGUI CollectedCoinsText;
     // game over menu
     [SerializeField] private GameObject gameoverMenu;
     //movementbutton
@@ -55,6 +56,9 @@ public class UIManager : MonoBehaviour
         IsGameover = true;
         gameoverMenu.SetActive(true);
         movementButton.SetActive(false);
+        CollectedCoinsText.text = "Collected Coins: " + ScoreCount;
+
+
 
         Application.ExternalCall("GameOver_DSL_Collected", ScoreCount);
     }
