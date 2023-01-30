@@ -27,8 +27,7 @@ public class AudioManager_Script : MonoBehaviour
             }
 
         isMutemusic = false;
-
-            
+        
     }
 
     void Start(){
@@ -91,6 +90,8 @@ public class AudioManager_Script : MonoBehaviour
                         {
                             if (s.name == "theme")
                             s.source.Stop();
+                            UIManager.instance.musicButton.SetActive(false);
+                            UIManager.instance.muteButton.SetActive(true);
                         }
                 }
                 isMutemusic = !isMutemusic; // changing Music
@@ -101,8 +102,11 @@ public class AudioManager_Script : MonoBehaviour
             foreach (sound s in sounds)
                 {
                     if (s.name == "theme")
-                       s.source.Play();
+                       s.source.Play(); 
+                    UIManager.instance.musicButton.SetActive(true);
+                    UIManager.instance.muteButton.SetActive(false);
                 }
+           
         }
 
 

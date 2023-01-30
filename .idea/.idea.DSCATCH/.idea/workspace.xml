@@ -4,7 +4,9 @@
     <list default="true" id="a4ac3b9a-5e49-4b34-b9e2-1b66ce98e618" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DSCATCH/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DSCATCH/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Particle System/Hovl Studio/Background VFX/HDRP asset/Background effects HDRP.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManager_Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager_Script.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
@@ -85,6 +87,7 @@
       <workItem from="1674672459401" duration="5132000" />
       <workItem from="1674732560336" duration="5436000" />
       <workItem from="1674843829887" duration="493000" />
+      <workItem from="1675079943392" duration="4150000" />
     </task>
     <servers />
   </component>

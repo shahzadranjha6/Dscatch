@@ -17,9 +17,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameoverMenu;
     //movementbutton
     [SerializeField] private GameObject movementButton;
-
-
-
+    //music Button
+    [SerializeField] public GameObject musicButton;
+    //mute Button
+    [SerializeField] public GameObject muteButton;
 
     // ---Others
     int ScoreCount;
@@ -127,6 +128,9 @@ public class UIManager : MonoBehaviour
     public void MuteUnmuteBtnPressed()
     {
         AudioManager_Script.instance.MuteUnMutemusic();
+        // musicButton.SetActive(false);
+        // muteButton.SetActive(true);
+        
     }
 
     public int GetScore()
