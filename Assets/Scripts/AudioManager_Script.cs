@@ -82,28 +82,28 @@ public class AudioManager_Script : MonoBehaviour
                 }
         }
 
-    public void MuteMusic()
-        {
-            // if isMute == false then go and make it true and Mute the Music
-            if(isMutemusic)
-                {
-                    foreach (sound s in sounds)
-                        {
-                            if (s.name == "theme")
-                            s.source.Stop();
-                        }
-                }
-                isMutemusic = !isMutemusic; // changing Music
-        }
+    // public void MuteMusic()
+    //     {
+    //         // if isMute == false then go and make it true and Mute the Music
+    //         if(isMutemusic)
+    //             {
+    //                 foreach (sound s in sounds)
+    //                     {
+    //                         if (s.name == "theme")
+    //                         s.source.Stop();
+    //                     }
+    //             }
+    //             isMutemusic = !isMutemusic; // changing Music
+    //     }
 
-    public void UnMuteMusic()
-        {
-            foreach (sound s in sounds)
-                {
-                    if (s.name == "theme")
-                       s.source.Play();
-                }
-        }
+    // public void UnMuteMusic()
+    //     {
+    //         foreach (sound s in sounds)
+    //             {
+    //                 if (s.name == "theme")
+    //                    s.source.Play();
+    //             }
+    //     }
 
 
 

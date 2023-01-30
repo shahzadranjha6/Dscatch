@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI TimeTxt;
     public TextMeshProUGUI GameOverTxt;
     public TextMeshProUGUI CollectedCoinsText;
+    public GameObject MuteBtn;
+    public GameObject UnMuteBtn;
     // game over menu
     [SerializeField] private GameObject gameoverMenu;
     //movementbutton
@@ -37,8 +39,14 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
 
+        MuteBtn.SetActive(true);
+        UnMuteBtn.SetActive(false);
+
+            // ---- just for main menu... (Using same script there also)
         if(!SceneManager.GetActiveScene().name.Equals("Main Menu"))
             {
+                gameoverMenu.SetActive(false);
+                movementButton.SetActive(true);
                 ScoreCount = 0;
                 ScoreTxt.text = "DSL Tokens:" + ScoreCount;
                 StartCoroutine("TimerCounter");
@@ -130,6 +138,17 @@ public class UIManager : MonoBehaviour
 
     public void MuteUnmuteBtnPressed()
     {
+        if (MuteBtn.activeSelf)
+            {
+                MuteBtn.SetActive(false);
+                UnMuteBtn.SetActive(true);
+            }
+        else
+            {
+                MuteBtn.SetActive(true);
+                UnMuteBtn.SetActive(false);
+            }
+            
         AudioManager_Script.instance.MuteUnMutemusic();
     }
 
