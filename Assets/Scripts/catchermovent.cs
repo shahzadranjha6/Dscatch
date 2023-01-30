@@ -205,23 +205,27 @@ public class catchermovent : MonoBehaviour
 
     private IEnumerator CameraShake()
         {
-            Camera cam = Camera.main;
-            Vector3 originalPos = cam.transform.position;
+            if(UIManager.instance.Seconds >2f)
+                {
+                    Camera cam = Camera.main;
+                    Vector3 originalPos = cam.transform.position;
 
-            float shakeDuration = 0.3f; // adjust duration to your liking
-            float shakeAmount = 0.2f; // adjust amount to your liking
+                    float shakeDuration = 0.3f; // adjust duration to your liking
+                    float shakeAmount = 0.2f; // adjust amount to your liking
 
-            float startTime = Time.time;
+                    float startTime = Time.time;
 
-            while (Time.time < startTime + shakeDuration)
-            {
-                Vector2 randomPos = UnityEngine.Random.insideUnitCircle * shakeAmount;
-                cam.transform.position = new Vector3(originalPos.x + randomPos.x, originalPos.y + randomPos.y, originalPos.z);
+                    while (Time.time < startTime + shakeDuration)
+                    {
+                        Vector2 randomPos = UnityEngine.Random.insideUnitCircle * shakeAmount;
+                        cam.transform.position = new Vector3(originalPos.x + randomPos.x, originalPos.y + randomPos.y, originalPos.z);
 
-                yield return null;
-            }
+                        yield return null;
+                    }
 
-            cam.transform.position = originalPos;
+                    cam.transform.position = originalPos;
+                }
+
         }
 
 }

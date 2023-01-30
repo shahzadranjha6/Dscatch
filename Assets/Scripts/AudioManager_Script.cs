@@ -10,6 +10,8 @@ public class AudioManager_Script : MonoBehaviour
 
     public static AudioManager_Script instance;  // to access the AudioManager_Script from other scripts
 
+    [SerializeField] private bool isMutemusic ;
+
     // Awake is called before the Start function.
     void Awake()
     {
@@ -23,6 +25,8 @@ public class AudioManager_Script : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
+
+        isMutemusic = false;
 
             
     }
@@ -69,13 +73,27 @@ public class AudioManager_Script : MonoBehaviour
         }
 
 
-    public void MuteMusic()
+    public void MuteUnMutemusic()
         {
             foreach (sound s in sounds)
                 {
                     if (s.name == "theme")
-                       s.source.Stop();
+                       s.source.mute = !s.source.mute;
                 }
+        }
+
+    public void MuteMusic()
+        {
+            // if isMute == false then go and make it true and Mute the Music
+            if(isMutemusic)
+                {
+                    foreach (sound s in sounds)
+                        {
+                            if (s.name == "theme")
+                            s.source.Stop();
+                        }
+                }
+                isMutemusic = !isMutemusic; // changing Music
         }
 
     public void UnMuteMusic()

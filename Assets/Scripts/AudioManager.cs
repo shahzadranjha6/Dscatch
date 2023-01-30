@@ -19,6 +19,11 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         audioSource = GetComponent<AudioSource>();  //-- get the audio source component
         

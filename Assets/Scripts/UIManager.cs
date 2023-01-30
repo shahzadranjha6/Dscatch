@@ -36,10 +36,13 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
 
-        ScoreCount = 0;
-        ScoreTxt.text = "DSL Tokens:" + ScoreCount;
+        if(!SceneManager.GetActiveScene().name.Equals("Main Menu"))
+            {
+                ScoreCount = 0;
+                ScoreTxt.text = "DSL Tokens:" + ScoreCount;
+                StartCoroutine("TimerCounter");
+            }
         
-        StartCoroutine("TimerCounter");
 
     }
 
@@ -101,6 +104,7 @@ public class UIManager : MonoBehaviour
     }
     public void GoToMainMenu()
     {
+        DestroyImmediate(GameObject.Find("AudioManager"));
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
@@ -113,4 +117,15 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void MoreGamesBtnClicked()
+    {
+        Application.OpenURL("https://mainnet.celebritygames.net/playtoearn");
+    }
+
+    public void MuteUnmuteBtnPressed()
+    {
+        AudioManager_Script.instance.MuteUnMutemusic();
+    }
+
 }
+ 
