@@ -27,6 +27,8 @@ public class catchermovent : MonoBehaviour
     int speed = 10;
     public InputAction playerControls;
 
+    private float player_positionY;
+
 
 
 
@@ -45,14 +47,17 @@ public class catchermovent : MonoBehaviour
 
 
         rb = GetComponent<Rigidbody2D>();
+        player_positionY = -3.2853f;
 
-        transform.position = new Vector2(0, -3.2853f);  // should spawn from starting Position
+        transform.position = new Vector2(0, player_positionY);  // should spawn from starting Position
 
         AudioManager_Script.instance.Play("theme");
+
     }
     //reading value of input by canvas button
     void Update()
     {
+        //////// Only for Computer Builds
         if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             leftMove();
@@ -61,26 +66,29 @@ public class catchermovent : MonoBehaviour
         {
             rightMove();
         }
+        //////// Only for Computer Builds
 
 
         // horizotal = playerControls.ReadValue<Vector2>();
         
         //bounding player movement to the camera
-        if (transform.position.x >= Bound)
-        {
-            transform.position = new Vector2(Bound, transform.position.y);
+        // if (transform.position.x >= Bound)
+        // {
+        //     // transform.position = new Vector2(Bound, transform.position.y);
+        //     transform.position = new Vector2(Bound, player_positionY);
     
-        }
+        // }
+        // else if (transform.position.x <= -Bound)
+        // {
+        //     // transform.position = new Vector2(-Bound, transform.position.y);
+        //     transform.position = new Vector2(-Bound, player_positionY); // don't get the Transform.position on Frames
+        // }
     
-        if (transform.position.x <= -Bound)
-        {
-            transform.position = new Vector2(-Bound, transform.position.y);
-        }
     }
 
     void FixedUpdate()
         {
-            rb.AddForce(new Vector2(horizontal_Speed * speed, 0), ForceMode2D.Impulse  );
+            rb.AddForce(new Vector2(horizontal_Speed * speed, 0) , ForceMode2D.Impulse  );
         }
    
     // private void OnTriggerEnter2D(Collider2D collision)
@@ -128,7 +136,8 @@ public class catchermovent : MonoBehaviour
 
             StartCoroutine("CameraShake");      //-- shake cam
 
-            damageVFX.Play();
+            if(UIManager.instance.GetScore() > 0)
+                damageVFX.Play();
         }
 
 
@@ -163,12 +172,14 @@ public class catchermovent : MonoBehaviour
      public void leftMove()
     {
         rb.velocity = new Vector2(-speed,0);
+        // rb.AddForce(new Vector2(-1 * speed, 0) , ForceMode2D.Impulse  );
 
     }
      //right movement button UI
     public void rightMove()
     {
-        rb.velocity = new Vector2(speed, 0);
+        rb.velocity = new Vector2(speed,0);
+        // rb.AddForce(new Vector2(1 * speed, 0) , ForceMode2D.Impulse  );
     }
 
 

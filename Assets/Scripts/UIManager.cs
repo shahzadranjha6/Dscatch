@@ -54,6 +54,8 @@ public class UIManager : MonoBehaviour
         IsGameover = true;
         gameoverMenu.SetActive(true);
         movementButton.SetActive(false);
+
+        Application.ExternalCall("GameOver_DSL_Collected", ScoreCount);
     }
 
 
@@ -126,6 +128,11 @@ public class UIManager : MonoBehaviour
     {
         AudioManager_Script.instance.MuteUnMutemusic();
     }
+
+    public int GetScore()
+        {
+            return ScoreCount;
+        }
 
 }
  
