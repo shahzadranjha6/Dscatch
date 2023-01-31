@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     // ---GUI texts, panels, buttons, etc   
     public TextMeshProUGUI ScoreTxt;
     public TextMeshProUGUI TimeTxt;
-    public TextMeshProUGUI GameOverTxt;
+    // public TextMeshProUGUI GameOverTxt;
     public TextMeshProUGUI CollectedCoinsText;
     // game over menu
     [SerializeField] private GameObject gameoverMenu;
@@ -51,11 +51,11 @@ public class UIManager : MonoBehaviour
     void GameOver()
     {
         Time.timeScale = 0;
-        GameOverTxt.gameObject.SetActive(true);
+        //GameOverTxt.gameObject.SetActive(true);
         IsGameover = true;
         gameoverMenu.SetActive(true);
         movementButton.SetActive(false);
-        CollectedCoinsText.text = "Collected Coins: " + ScoreCount;
+        CollectedCoinsText.text = "DSL Tokens: " + ScoreCount;
 
 
 
