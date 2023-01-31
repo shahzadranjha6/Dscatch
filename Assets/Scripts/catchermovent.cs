@@ -66,6 +66,7 @@ public class catchermovent : MonoBehaviour
         {
             rightMove();
         }
+        Touchinput();
         //////// Only for Computer Builds
 
 
@@ -181,6 +182,29 @@ public class catchermovent : MonoBehaviour
         rb.velocity = new Vector2(speed,0);
         // rb.AddForce(new Vector2(1 * speed, 0) , ForceMode2D.Impulse  );
     }
+    void Touchinput()
+    {
+        
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == UnityEngine.TouchPhase.Moved)
+            {
+                // Get the swipe direction
+                Vector2 swipeDirection = touch.deltaPosition.normalized;
+                if (swipeDirection.x > 0)
+                {
+                    rightMove();
+                }
+                if (swipeDirection.x < 0)
+                {
+                    leftMove();
+                }
+               
+
+            }
+        }
+    }
 
 
 
@@ -189,6 +213,7 @@ public class catchermovent : MonoBehaviour
             Debug.Log("horizontal movement called");
             horizontal_Speed = got_Speed;
         }
+    
 
 
 
@@ -238,5 +263,7 @@ public class catchermovent : MonoBehaviour
                 }
 
         }
+       
+
 
 }
