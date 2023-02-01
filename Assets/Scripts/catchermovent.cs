@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 
 public class catchermovent : MonoBehaviour
@@ -32,6 +33,8 @@ public class catchermovent : MonoBehaviour
 
 
 
+    // for touch input declare a slider
+    [SerializeField] private GameObject slider;
 
 
 
@@ -39,6 +42,23 @@ public class catchermovent : MonoBehaviour
     [Tooltip("VFX to play when the player takes damage")]
     [SerializeField] private ParticleSystem damageVFX;
     private Vector3 orignalCamPos;
+
+
+
+    //////////////////////////////////
+        // Touch Slider Controls
+        [Space(20)]
+        [Header("Touch Controls")]
+        [SerializeField] private float moveSpeed;
+        [SerializeField] private float pushForce;
+        // [SerializeField] private SliderControls touchSlider;
+        // make a Slider COntrol
+        [SerializeField] private SliderControls touchSlider;
+      [SerializeField]  private bool isPointerDown;
+      [SerializeField]  private Vector3 cubePos;
+
+        [SerializeField] private GameObject mainCube ;
+
 
 
     private void Start()
@@ -53,6 +73,9 @@ public class catchermovent : MonoBehaviour
 
         AudioManager_Script.instance.Play("theme");
 
+
+        mainCube = this.gameObject;
+
     }
     //reading value of input by canvas button
     void Update()
@@ -66,25 +89,25 @@ public class catchermovent : MonoBehaviour
         {
             rightMove();
         }
-        Touchinput();
-        //////// Only for Computer Builds
-
-
-        // horizotal = playerControls.ReadValue<Vector2>();
         
-        //bounding player movement to the camera
-        // if (transform.position.x >= Bound)
-        // {
-        //     // transform.position = new Vector2(Bound, transform.position.y);
-        //     transform.position = new Vector2(Bound, player_positionY);
+
+        // check if slider.value is changed
+        // if (slider.GetComponent<UnityEngine.UI.Slider>().value != 0.5f)
+        //     {
+        //         Debug.Log("Slider Value: " + slider.GetComponent<UnityEngine.UI.Slider>().value);
+        //         transform.position = new Vector2(slider.GetComponent<UnityEngine.UI.Slider>().value * Bound, player_positionY);
+        //     }
     
-        // }
-        // else if (transform.position.x <= -Bound)
-        // {
-        //     // transform.position = new Vector2(-Bound, transform.position.y);
-        //     transform.position = new Vector2(-Bound, player_positionY); // don't get the Transform.position on Frames
-        // }
-    
+    }
+
+    public void ChangePositionOnSliderPointerDown()
+    {
+        // check if gomeover==false
+        if (UIManager.instance.IsGameover == false)
+            {
+                Debug.Log("Slider Value: " + slider.GetComponent<UnityEngine.UI.Slider>().value);
+                transform.position = new Vector2(slider.GetComponent<UnityEngine.UI.Slider>().value * Bound, player_positionY);
+            }
     }
 
     void FixedUpdate()
@@ -92,26 +115,6 @@ public class catchermovent : MonoBehaviour
             rb.AddForce(new Vector2(horizontal_Speed * speed, 0) , ForceMode2D.Impulse  );
         }
    
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("BlackToken"))
-    //         {
-    //         collision.gameObject.SetActive(false);
-    //             // AudioManager.instance.PlaySound();
-    //             AudioManager_Script.instance.Play("collect");
-    //             UIManager.instance.ScoreUpdate();
-    //             Debug.Log("collected");
-    //         }   
-    //         else if (collision.CompareTag("RedToken"))
-    //         {
-    //             collision.gameObject.SetActive(false);
-    //             // AudioManager.instance.PlaySound();
-
-    //             AudioManager_Script.instance.Play("damage");
-    //             UIManager.instance.ScoreUpdateMinus();
-    //             Debug.Log("collected");
-    //         }
-    // }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -216,29 +219,6 @@ public class catchermovent : MonoBehaviour
     
 
 
-
-    // --- camera shake
-
-    // private IEnumerator CameraShake()
-    //     {
-    //         for (int i = 0; i < 5; i++)
-    //         {
-    //             Camera cam = Camera.main;       //--- using for camera shake
-
-    //             Vector2 randomPos = UnityEngine.Random.insideUnitCircle * 0.2f;     //--> generating a random value
-
-
-    //             cam.transform.position = new Vector3(UnityEngine.Random.Range(cam.transform.position.x , cam.transform.position.x+.3f)  , cam.transform.position.y , cam.transform.position.z );  //-->> set randomly generated position
-
-    //             yield return new WaitForSeconds(0.01f);
-    //             // yield return null;
-    //             // yield return null;      //-->> this means we wait for the current frame to be finished(returning null)
-    //                                         //--> after returning the loop will run again [method will not terminate]
-    //         }   
-
-    //         Camera.main.transform.position = orignalCamPos;         //-->> again setting the position to default position
-    //     }
-
     private IEnumerator CameraShake()
         {
             if(UIManager.instance.Seconds >2f)
@@ -263,7 +243,4 @@ public class catchermovent : MonoBehaviour
                 }
 
         }
-       
-
-
 }

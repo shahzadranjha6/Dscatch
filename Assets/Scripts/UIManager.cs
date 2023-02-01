@@ -17,7 +17,10 @@ public class UIManager : MonoBehaviour
     // game over menu
     [SerializeField] private GameObject gameoverMenu;
     //movementbutton
-    [SerializeField] private GameObject movementButton;
+    [SerializeField] private GameObject PlayMode_Panel;
+
+    public GameObject MuteBtn;
+    public GameObject UnMuteBtn;
 
 
 
@@ -39,9 +42,14 @@ public class UIManager : MonoBehaviour
 
         if(!SceneManager.GetActiveScene().name.Equals("Main Menu"))
             {
+                MuteBtn.SetActive(true);
+                UnMuteBtn.SetActive(false);
+                
                 ScoreCount = 0;
                 ScoreTxt.text = "DSL Tokens:" + ScoreCount;
                 StartCoroutine("TimerCounter");
+
+                ActiveDeactiveMuteBtn();
             }
         
 
@@ -54,7 +62,7 @@ public class UIManager : MonoBehaviour
         //GameOverTxt.gameObject.SetActive(true);
         IsGameover = true;
         gameoverMenu.SetActive(true);
-        movementButton.SetActive(false);
+        PlayMode_Panel.SetActive(false);
         CollectedCoinsText.text = "DSL Tokens: " + ScoreCount;
 
 
@@ -118,7 +126,7 @@ public class UIManager : MonoBehaviour
     public void restartGame()
     {
         gameoverMenu.SetActive(false);
-        movementButton.SetActive(true);
+        PlayMode_Panel.SetActive(true);
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
@@ -130,8 +138,38 @@ public class UIManager : MonoBehaviour
 
     public void MuteUnmuteBtnPressed()
     {
+       if(MuteBtn.activeSelf)
+        {
+            PlayerPrefs.SetInt("Mute", 1);
+            
+            MuteBtn.SetActive(false);
+            UnMuteBtn.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Mute", 0);
+
+            MuteBtn.SetActive(true);
+            UnMuteBtn.SetActive(false);
+        }
+        
         AudioManager_Script.instance.MuteUnMutemusic();
     }
+
+    public void ActiveDeactiveMuteBtn()
+        {
+            // check if audio is muted
+            if(PlayerPrefs.GetInt("Mute") == 1)
+            {
+                MuteBtn.SetActive(false);
+                UnMuteBtn.SetActive(true);
+            }
+            else
+            {
+                MuteBtn.SetActive(true);
+                UnMuteBtn.SetActive(false);
+            }
+        }
 
     public int GetScore()
         {
