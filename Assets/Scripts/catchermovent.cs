@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 public class catchermovent : MonoBehaviour
 {
+    public static catchermovent instance;
+
+
     
     private int Bound = 14; 
     //horizontal movement for playercontrols for buttons
@@ -34,7 +37,7 @@ public class catchermovent : MonoBehaviour
 
 
     // for touch input declare a slider
-    [SerializeField] private GameObject slider;
+    [SerializeField] public GameObject slider;
 
 
 
@@ -59,6 +62,13 @@ public class catchermovent : MonoBehaviour
 
         [SerializeField] private GameObject mainCube ;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
 
     private void Start()

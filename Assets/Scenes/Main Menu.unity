@@ -668,8 +668,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294961599
-  m_fontColor: {r: 0.75, g: 0.9133663, b: 1, a: 1}
+    rgba: 4291932569
+  m_fontColor: {r: 0.60008013, g: 0.69465494, b: 0.8207547, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1289,9 +1289,14 @@ MonoBehaviour:
   TimeTxt: {fileID: 0}
   CollectedCoinsText: {fileID: 0}
   gameoverMenu: {fileID: 0}
-  movementButton: {fileID: 0}
-  Seconds: 20
+  PlayMode_Panel: {fileID: 0}
+  MuteBtn: {fileID: 0}
+  UnMuteBtn: {fileID: 0}
   IsGameover: 0
+  isLoggedIn: 0
+  ClaimBtn: {fileID: 0}
+  LoginBtn: {fileID: 0}
+  Seconds: 20
 --- !u!114 &667924840
 MonoBehaviour:
   m_ObjectHideFlags: 0

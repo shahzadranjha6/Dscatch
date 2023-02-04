@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,6 +22,15 @@ public class UIManager : MonoBehaviour
 
     public GameObject MuteBtn;
     public GameObject UnMuteBtn;
+    public bool IsGameover = false;
+
+
+        // --- Login/Logout
+    public bool isLoggedIn = false;
+
+    public GameObject ClaimBtn;
+    public GameObject LoginBtn;
+
 
 
 
@@ -29,7 +39,6 @@ public class UIManager : MonoBehaviour
     int ScoreCount;
     float Minutes = 0f;
     public int Seconds = 20;
-    public bool IsGameover = false;
 
 
     // Start is called before the first frame update
@@ -42,17 +51,24 @@ public class UIManager : MonoBehaviour
 
         if(!SceneManager.GetActiveScene().name.Equals("Main Menu"))
             {
-                MuteBtn.SetActive(true);
-                UnMuteBtn.SetActive(false);
-                
-                ScoreCount = 0;
-                ScoreTxt.text = "DSL Tokens:" + ScoreCount;
-                StartCoroutine("TimerCounter");
-
-                ActiveDeactiveMuteBtn();
+                ReadyPlaySceneUI();
             }
         
+        Invoke("CallWeb_ToUpdateUserStatus", 2f);
+    }
 
+    void ReadyPlaySceneUI()
+    {
+        // --- for panels
+        PlayMode_Panel.SetActive(true);
+        gameoverMenu.SetActive(false);
+
+        // --- for Score
+        ScoreCount = 0;
+        ScoreTxt.text = "DSL Tokens:" + ScoreCount;
+        StartCoroutine("TimerCounter");
+
+        ActiveDeactiveMuteBtn();
     }
 
 
@@ -60,14 +76,35 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         //GameOverTxt.gameObject.SetActive(true);
+
+
         IsGameover = true;
         gameoverMenu.SetActive(true);
+        catchermovent.instance.slider.SetActive(false);     //---- turning this off is important. Otherwise, it will block touch of Buttons
+
+            // update info of user
+            Decide_User_Login();
+
         PlayMode_Panel.SetActive(false);
         CollectedCoinsText.text = "DSL Tokens: " + ScoreCount;
 
 
 
         Application.ExternalCall("GameOver_DSL_Collected", ScoreCount);
+    }
+
+    public void Decide_User_Login()
+    {
+        if(isLoggedIn == true)
+            {   //--- if logged in then show claim btn
+                ClaimBtn.SetActive(true);
+                LoginBtn.SetActive(false);
+            }
+        else
+            {       //--- if not logged in then show login button
+                LoginBtn.SetActive(true);
+                ClaimBtn.SetActive(false);
+            }
     }
 
 
@@ -116,20 +153,30 @@ public class UIManager : MonoBehaviour
         }
         ScoreTxt.text = "DSL Tokens:" + ScoreCount;
     }
-    public void GoToMainMenu()
-    {
-        DestroyImmediate(GameObject.Find("AudioManager"));
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1;
-    }
-    //restartgame button mechanics
-    public void restartGame()
-    {
-        gameoverMenu.SetActive(false);
-        PlayMode_Panel.SetActive(true);
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1;
-    }
+
+
+    public void ActiveDeactiveMuteBtn()
+        {
+            // check if audio is muted
+            if(PlayerPrefs.GetInt("Mute") == 1)
+            {
+                MuteBtn.SetActive(false);
+                UnMuteBtn.SetActive(true);
+            }
+            else
+            {
+                MuteBtn.SetActive(true);
+                UnMuteBtn.SetActive(false);
+            }
+        }
+
+    public int GetScore()
+        {
+            return ScoreCount;
+        }
+
+    
+// ---------- Buttons
 
     public void MoreGamesBtnClicked()
     {
@@ -156,25 +203,52 @@ public class UIManager : MonoBehaviour
         AudioManager_Script.instance.MuteUnMutemusic();
     }
 
-    public void ActiveDeactiveMuteBtn()
+    public void LoginBtnClicked()
         {
-            // check if audio is muted
-            if(PlayerPrefs.GetInt("Mute") == 1)
-            {
-                MuteBtn.SetActive(false);
-                UnMuteBtn.SetActive(true);
-            }
-            else
-            {
-                MuteBtn.SetActive(true);
-                UnMuteBtn.SetActive(false);
-            }
+            Application.OpenURL("https://celebritygames.net/");
         }
 
-    public int GetScore()
+    public void ClaimBtnClicked()
         {
-            return ScoreCount;
+            Application.ExternalCall("ClaimBtnClicked" , ScoreCount);
+
+                //---- making claim button non-interactible so the user can't claim again
+            ClaimBtn.GetComponent<Button>().interactable = false;
         }
+
+    public void GoToMainMenu()
+        {
+            DestroyImmediate(GameObject.Find("AudioManager"));
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+        }
+
+    //restartgame button mechanics
+    public void restartGame()
+        {
+            gameoverMenu.SetActive(false);
+            PlayMode_Panel.SetActive(true);
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1;
+        }
+// ---------- Web
+    
+
+// ---------- Login/Logout
+    public void CallWeb_ToUpdateUserStatus()
+        {
+            Application.ExternalCall("CheckUserStatus");
+            // Application.ExternalEval("CheckUserStatus");
+        }
+
+    public void SetUserStatus(bool status)
+        {
+            isLoggedIn = status;
+        }
+
+
+
+
 
 }
  
